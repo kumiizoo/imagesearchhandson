@@ -28,7 +28,7 @@ RUN jupyter notebook --generate-config \
  && mkdir -p /home/${USERNAME}/jupyter-working \
  && sed -i.back \
     -e "s:^#c.NotebookApp.token = .*$:c.NotebookApp.token = '':" \
-    -e "s:^#c.NotebookApp.ip = .*$:c.NotebookApp.ip = '120.0.0.0':" \
+    -e "s:^#c.NotebookApp.ip = .*$:c.NotebookApp.ip = '0.0.0.0':" \
     -e "s:^#c.NotebookApp.open_browser = .*$:c.NotebookApp.open_browser = False:" \
     -e "s:^#c.NotebookApp.password = .*$:c.NotebookApp.password = 'alieaters':" \
     -e "s:^#c.NotebookApp.notebook_dir = .*$:c.NotebookApp.notebook_dir = '/home/${USERNAME}/jupyter-working':" \
@@ -38,4 +38,4 @@ RUN jupyter notebook --generate-config \
 EXPOSE 8888
 
 # Boot process
-CMD jupyter notebook --port 8888 --ip=0.0.0.0 --allow-root
+CMD jupyter notebook --port 8888 --ip=0.0.0.0 --allow-root --NotebookApp.token=''
