@@ -1,2 +1,5 @@
-ACCESS_KEY_ID=<<your-access-key-id>>
-ACCESS_KEY_SECRET=<<your-access-key-scret>>
+ACCESS_KEY_ID='アクセスキー'
+ACCESS_KEY_SECRET='シークレットキー'
+REGION='リージョン名'
+BUCKET_NAME='バケット名'
+IMAGESEARCH_INSTANCE_NAME='インスタンス名'
