@@ -25,14 +25,7 @@ USER ${USERNAME}
 
 # Jupyter configuration
 RUN jupyter notebook --generate-config \
- && mkdir -p /home/${USERNAME}/jupyter-working \
- && sed -i.back \
-    -e "s:^#c.NotebookApp.token = .*$:c.NotebookApp.token = '':" \
-    -e "s:^#c.NotebookApp.ip = .*$:c.NotebookApp.ip = '0.0.0.0':" \
-    -e "s:^#c.NotebookApp.open_browser = .*$:c.NotebookApp.open_browser = False:" \
-    -e "s:^#c.NotebookApp.password = .*$:c.NotebookApp.password = 'alieaters':" \
-    -e "s:^#c.NotebookApp.notebook_dir = .*$:c.NotebookApp.notebook_dir = '/home/${USERNAME}/jupyter-working':" \
-    /home/${USERNAME}/.jupyter/jupyter_notebook_config.py
+ && mkdir -p /home/${USERNAME}/jupyter-working
 
 # Expose container ports
 EXPOSE 8888
