@@ -1,4 +1,4 @@
-tFROM ubuntu:18.04
+FROM ubuntu:18.04
 
 # Install prerequisite packages
 RUN apt-get update \
