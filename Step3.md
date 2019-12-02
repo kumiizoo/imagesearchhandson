@@ -9,15 +9,15 @@ Alibaba Cloud上の仮想的なストレージサービスです。バケット�
 1. *ストレージと CDN* メニューの *Object Storage Servicee* を選択します
 1. 右の *Bucket 管理* から *バケットの作成* をボタンを押下します
 1. 次の通り入力します
-  - *バケット名* : `imagesearchhandson-任意の文字列`
-  - *リージョン*
-    - *中国（香港）* : `China (Hong Kong)`
-    - *シンガポール* : `Singapore`
-    - *オーストラリア（シドニー）* : `Australia (Sydney)`
-    - *日本（東京）* : `Japan (Tokyo)`
-  - *ストレージクラス* : `標準ストレージ`
-  - *ACL* : `非公開`
-  - *リアルタイムログ照会* : `Disable`
+  1. *バケット名* : `imagesearchhandson-任意の文字列`
+  1. *リージョン*
+    1. *中国（香港）* : `China (Hong Kong)`
+    1. *シンガポール* : `Singapore`
+    1. *オーストラリア（シドニー）* : `Australia (Sydney)`
+    1. *日本（東京）* : `Japan (Tokyo)`
+  1. *ストレージクラス* : `標準ストレージ`
+  1. *ACL* : `非公開`
+  1. *リアルタイムログ照会* : `Disable`
 1. *OK* ボタンを押下します
 
 ## 参考
