@@ -1,4 +1,5 @@
 # RAMユーザーの作成
+###### 10min
 
 ## Resource Access Management(RAM)
 Alibaba Cloudリソースをアカウントに代わって他のユーザーやAlibaba Cloudサービスが使えるようにするサービスです。
@@ -35,7 +36,6 @@ Alibaba Cloudリソースをアカウントに代わって他のユーザーやA
 1. *OK* ボタンを押下します
 
 ## `AdminUser` の使用
-以降、全てのAlibaba Cloud上の操作を `AdminUser` にて行います
 1. 左のメニューから `<` ボタンを押下します
 1. 左のメニューから *設定* を選択します
 1. *ユーザのエイリアスの設定* タブを選択し、 *RAM ユーザーログイン* をメモします
@@ -47,6 +47,7 @@ Alibaba Cloudリソースをアカウントに代わって他のユーザーやA
     1. *パスワード* : `任意の文字列`
 
 ## `ImageSearchHandsOnUser` の作成
+以降、全てのAlibaba Cloud上の操作を `AdminUser` にて行います
 1. *マネジメント* メニューの *Resource Access Management* を選択します
 1. 左のメニューから *ユーザー* を選択します
 1. 右上の *新規ユーザー* ボタンを押下します
