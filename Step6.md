@@ -27,18 +27,22 @@ PythonをGUIベースでインタラクティブに実行することができ�
     git clone https://github.com/kanzai935/imagesearchhandson.git
     cd imagesearchhandson/
     ```
-1. 次を入力し、環境変数をセットアップします
+1. 次を入力し、環境変数ファイルを編集します
     ```
     vi env
     i
-    次の通り入力します
-    =============================================================================================
+    ```
+1. 次を入力し、環境変数をセットアップします。リージョンの英語表記は[Step0](Step0.md)を参照してください。
+    ```
     ACCESS_KEY_ID=Step1で作成したImageSearchHandsOnUserのアクセスキー
     ACCESS_KEY_SECRET=Step1で作成したImageSearchHandsOnUserのシークレットキー
-    REGION=指定されたリージョンの英語表記（https://jp.alibabacloud.com/help/doc-detail/40654.htm 参照）
+    REGION=指定されたリージョンの英語表記
     BUCKET_NAME=Step3で作成したOSSバケット名
     IMAGESEARCH_INSTANCE_NAME=Step5で作成したImage Searchインスタンス名
-    =============================================================================================
+    ```
+    1.
+1. 次を入力し、環境変数ファイルを保存します
+    ```
     :wq
     ```
 1. 次を入力し、Jupyter NotebookのDockerイメージをビルドします
