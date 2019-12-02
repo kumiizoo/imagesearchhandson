@@ -94,4 +94,4 @@ Alibaba Cloud上の仮想的なサーバーです。CPU・メモリ・ディス�
 - [ECS公式ドキュメント](https://jp.alibabacloud.com/product/ecs)
 
 
-[戻る](Step5.md) | [次へ](Step6.md)
+[戻る](Step4.md) | [次へ](Step6.md)
