@@ -4,7 +4,6 @@
 ## AliEaters Code支部 第3回
 - [Alibaba Cloud 画像検索ハンズオン](https://alibabacloud.connpass.com/event/153504/)
   - [Image Searchの説明]()
-  - [Image Searchのハンズオン]()
 
 ## ハンズオンに入る前の休憩中のお願い
 ##### ECSイメージの共有
