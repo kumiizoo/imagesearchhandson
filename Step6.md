@@ -5,8 +5,6 @@
 PythonをGUIベースでインタラクティブに実行することができるオープンソースソフトウェアです。
 機会学習や画像認識の処理を検証する際によく使用されます。本ハンズオンでは、ECSサーバー上にJupyter Notebookを構築し、Jupyter NotebookからImage Searchに対して画像登録・検索・削除を行います。
 
-![Jupyter Notebook](img/jupyter.png)
-
 ## Jupyter Notebookの構築
 1. *仮想サーバー* メニューの *Elastic Compute Service* を選択します
 1. 左上のリージョンから指定されたリージョンを選択します
