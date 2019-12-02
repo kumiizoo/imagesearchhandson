@@ -13,8 +13,7 @@ PythonをGUIベースでインタラクティブに実行することができ�
 1. 左のメニューから *インスタンス* を選択します
 1. `ecs-imagesearchhandson` の *IPアドレス(インターネット)* をメモします
 1. 左上の *Cloud Shell* アイコンボタンを押下します（下記参照）
-    1. Cloud Shellのアイコン
-![Cloud Shell](img/cloudshell.png)
+    ![Cloud Shell](img/cloudshell.png)
 1. *ストレージスペース* に関するモーダルの *スキップ* を選択
 1. 次を入力し、ECSサーバーにログインします
     ```
@@ -55,7 +54,7 @@ PythonをGUIベースでインタラクティブに実行することができ�
         ```
         a4e71f6edb5f6636af87225b9015345c537f602367ad5372f62e94371dc61672
         ```
-1. 次を入力し、Jupyter NotebookのDockerコンテナが起動していることを確認し、<<CONTAINER ID>>をメモします
+1. 次を入力し、Jupyter NotebookのDockerコンテナが起動していることを確認し、`CONTAINER ID`をメモします
     ```
     docker ps -a
     ```
@@ -64,7 +63,7 @@ PythonをGUIベースでインタラクティブに実行することができ�
         CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
         fe781b36f571        notebook            "/bin/sh -c 'jupyter…"   9 seconds ago       Up 8 seconds        0.0.0.0:8888->8888/tcp   silly_gould
         ```
-1. 次を入力し、Jupyter Notebookのtokeをメモします
+1. 次を入力し、Jupyter Notebookのtokenをメモします
     ```
     docker logs <<CONTAINER ID>>
     ```
