@@ -13,7 +13,8 @@ PythonをGUIベースでインタラクティブに実行することができ�
 1. 左のメニューから *インスタンス* を選択します
 1. `ecs-imagesearchhandson` の *IPアドレス(インターネット)* をメモします
 1. 左上の *Cloud Shell* アイコンボタンを押下します（下記参照）
-    ![Cloud Shell](img/cloudshell.png)
+    1. Cloud Shellのアイコン
+        ![Cloud Shell](img/cloudshell.png)
 1. *ストレージスペース* に関するモーダルの *スキップ* を選択
 1. 次を入力し、ECSサーバーにログインします
     ```

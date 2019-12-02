@@ -1,5 +1,5 @@
 # OSSに画像登録
-###### 15min
+###### 10min
 
 ## Notebookを起動
 1. `http://<<IPアドレス(インターネット)>>:8888/tree/home/jupyter/jupyter-working` にアクセスします
