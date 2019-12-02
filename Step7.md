@@ -1,4 +1,5 @@
 # OSSに画像登録
+###### 15min
 
 ## Notebookを起動
 1. `http://<<IPアドレス(インターネット)>>:8888/tree/home/jupyter/jupyter-working` にアクセスします
@@ -8,13 +9,13 @@
 ## 画像登録
 以降、手順ごとにソースをNotebookのCellに貼っていき、*shift + Enter* をしてください。
 1. 必要なライブラリを読み込みます
-```
-from aliyunsdkcore.client import AcsClient
-import oss2
-import os
-import pathlib
-import pprint
-```
+    ```
+    from aliyunsdkcore.client import AcsClient
+    import oss2
+    import os
+    import pathlib
+    import pprint
+    ```
 1. 環境変数を読み込みます
 ```
 # Setting ENV
@@ -35,7 +36,7 @@ bucket = oss2.Bucket(auth, oss_endpoint, bucket_name)
 # Uploading item data
 bucket.put_object_from_file('item_data.csv', 'item_data/item_data.csv')
 ```
-  * 実行結果例
+    1. 実行結果例
 ```
 <oss2.models.PutObjectResult at 0x7f3b91c73c18>
 ```
