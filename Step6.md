@@ -40,7 +40,6 @@ PythonをGUIベースでインタラクティブに実行することができ�
     BUCKET_NAME=Step3で作成したOSSバケット名
     IMAGESEARCH_INSTANCE_NAME=Step5で作成したImage Searchインスタンス名
     ```
-    1.
 1. 次を入力し、環境変数ファイルを保存します
     ```
     :wq

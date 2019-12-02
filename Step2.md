@@ -17,7 +17,7 @@ Alibaba Cloud上の仮想的なネットワーク空間です。VPC内にサー�
         1. *IPv4 CIDR ブロック* : `10.0.0.0/8`
     1. VSwitch
         1. *名前* : `vswitch-imagesearchhandson`
-        1. *ゾーン*
+        1. *ゾーン* : 指定されたリージョンごとに選択してください
             1. *中国（香港）* : `Hong Kong Zone B`
             1. *シンガポール* : `Singapore Zone A`
             1. *オーストラリア（シドニー）* : `Sydney Zone A`
