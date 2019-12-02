@@ -10,7 +10,8 @@ PythonをGUIベースでインタラクティブに実行することができ�
 1. 左のメニューから *インスタンス* を選択します
 1. `ecs-imagesearchhandson` の *IPアドレス(インターネット)* をメモします
 1. 左上の *Cloud Shell* アイコンボタンを押下します（下記参照）
-  * ![Cloud Shell](img/cloudshell.png)
+  * Cloud Shellのアイコン
+![Cloud Shell](img/cloudshell.png)
 1. *ストレージスペース* に関するモーダルの *スキップ* を選択
 1. 次を入力し、ECSサーバーにログインします
 ```
@@ -70,5 +71,6 @@ exit
 ## 参考
 - [Cloud Shell公式ドキュメント](https://jp.alibabacloud.com/help/doc-detail/90395.htm)
 - [Alibaba CloudのCloud Shellでは何ができるか](https://www.sbcloud.co.jp/entry/2019/01/08/cloudshell/)
+
 
 [戻る](Step5.md) | [次へ](Step7.md)

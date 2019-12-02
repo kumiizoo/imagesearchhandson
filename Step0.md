@@ -12,12 +12,17 @@ Image Searchに集中してもらいため、環境構築は全てブラウザ�
 ## リージョン
 国や地域を表すAlibaba Cloudの拠点です。本ハンズオンでは複数のリージョンに分散してインフラ構築をしてもらいます。使用するリージョンは次の通りです。
 - 中国（香港）
+  - ピンク色
 - シンガポール
+  - 黄色
 - オーストラリア（シドニー）
+  - 緑色
 - 日本（東京）
+  - 青色
 
 ## 参考
 - [【初心者向け】AlibabaCloud入門 ークラウドはじめの一歩](https://www.slideshare.net/sbcloud/alibabacloud)
 - [Alibaba Cloudセキュリティベストプラクティス](https://www.slideshare.net/sbcloud/alibaba-cloud)
+
 
 [戻る](README.md) | [次へ](Step1.md)

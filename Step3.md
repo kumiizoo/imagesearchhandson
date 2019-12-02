@@ -24,4 +24,5 @@ Alibaba Cloud上の仮想的なストレージサービスです。バケット�
 - [OSS公式ドキュメント](https://jp.alibabacloud.com/product/oss)
 - [Alibaba Cloud OSSの画像編集機能を使ってみよう](https://www.sbcloud.co.jp/entry/2017/07/05/alibaba-cloud-oss-object-storage-service-useful-use/)
 
+
 [戻る](Step2.md) | [次へ](Step4.md)
