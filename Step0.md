@@ -8,7 +8,7 @@ Image Search自体は画像情報（画像ファイル名やメタデータ）�
 
 Image Searchに集中してもらいため、環境構築は全てブラウザ上からできるようにしています。[Step1](Step1.md)から[Step5](Step5.md)までが環境構築となります。
 
-![インフラ構成図](img/infra.png)
+![インフラ構成図](img/ali-infra.png)
 
 
 ## リージョン
