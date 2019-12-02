@@ -11,17 +11,17 @@ Alibaba Cloud上の仮想的なネットワーク空間です。VPC内にサー�
 1. 左のメニューから *VPCs* を選択します
 1. *VPC の作成* ボタンを押下します
 1. 次の通り入力します
-  * VPC
-    * *名前* : `vpc-imagesearchhandson`
-    * *IPv4 CIDR ブロック* : `10.0.0.0/8`
-  * VSwitch
-    * *名前* : `vswitch-imagesearchhandson`
-    * *ゾーン*
-      * *中国（香港）* : `Hong Kong Zone B`
-      * *シンガポール* : `Singapore Zone A`
-      * *オーストラリア（シドニー）* : `Sydney Zone A`
-      * *日本（東京）* : `Tokyo Zone A`
-    * *IPv4 CIDR ブロック* : `10.0.0.0/24`
+  - VPC
+    - *名前* : `vpc-imagesearchhandson`
+    - *IPv4 CIDR ブロック* : `10.0.0.0/8`
+  - VSwitch
+    - *名前* : `vswitch-imagesearchhandson`
+    - *ゾーン*
+      - *中国（香港）* : `Hong Kong Zone B`
+      - *シンガポール* : `Singapore Zone A`
+      - *オーストラリア（シドニー）* : `Sydney Zone A`
+      - *日本（東京）* : `Tokyo Zone A`
+    - *IPv4 CIDR ブロック* : `10.0.0.0/24`
 1. *OK* ボタンを押下します
 1. *完了* ボタンを押下します
 
