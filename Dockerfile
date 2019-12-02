@@ -31,4 +31,4 @@ RUN jupyter notebook --generate-config \
 EXPOSE 8888
 
 # Boot process
-CMD jupyter notebook --port 8888 --ip=0.0.0.0 --allow-root --NotebookApp.token=''
+CMD jupyter notebook --port 8888 --ip=0.0.0.0 --allow-root
