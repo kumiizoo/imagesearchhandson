@@ -21,10 +21,13 @@ PythonをGUIベースでインタラクティブに実行することができ�
     Are you sure you want to continue connecting (yes/no)? >> yes
     root@<<IPアドレス(インターネット)>>'s password: >> <<Step5で指定したパスワード>>
     ```
-1. 次を入力し、環境変数をセットアップします
+1. 次を入力し、Jupyter NotebookのDockerイメージをプルします
     ```
     git clone https://github.com/kanzai935/imagesearchhandson.git
     cd imagesearchhandson/
+    ```
+1. 次を入力し、環境変数をセットアップします
+    ```
     vi env
     i
     次の通り入力します
