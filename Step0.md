@@ -24,6 +24,7 @@ Image Searchに集中してもらいため、環境構築は全てブラウザ�
 ## 参考
 - [【初心者向け】AlibabaCloud入門 ークラウドはじめの一歩](https://www.slideshare.net/sbcloud/alibabacloud)
 - [Alibaba Cloudセキュリティベストプラクティス](https://www.slideshare.net/sbcloud/alibaba-cloud)
+- [Alibaba Cloudアイコン集](https://www.alibabacloud.com/help/doc-detail/67830.htm)
 - [リージョンの英語表記](https://jp.alibabacloud.com/help/doc-detail/40654.htm)
 
 [戻る](README.md) | [次へ](Step1.md)
