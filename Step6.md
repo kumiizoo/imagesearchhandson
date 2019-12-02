@@ -1,5 +1,5 @@
 # Jupyter Notebookの構築
-###### 15min
+###### 25min
 
 ## Jupyter Notebook
 PythonをGUIベースでインタラクティブに実行することができるオープンソースソフトウェアです。
@@ -21,6 +21,38 @@ PythonをGUIベースでインタラクティブに実行することができ�
     ssh root@<<IPアドレス(インターネット)>>
     Are you sure you want to continue connecting (yes/no)? >> yes
     root@<<IPアドレス(インターネット)>>'s password: >> <<Step5で指定したパスワード>>
+    ```
+1. 次を入力し、Jupyter Notebookを起動させるDockerとGitをインストールします。`-` に囲われた内容は実行結果抜粋です。
+    ```
+    yum -y update
+    ----------
+    Complete!
+    ----------
+    yum install -y yum-utils device-mapper-persistent-data lvm2
+    ----------
+    Complete!
+    ----------
+    yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+    ---------------------------------------------
+    repo saved to /etc/yum.repos.d/docker-ce.repo
+    ---------------------------------------------
+    yum install -y docker-ce docker-ce-cli containerd.io
+    ----------
+    Complete!
+    ----------
+    systemctl start docker
+    systemctl enable docker
+    ---------------------------------------------------------------------------------------------------------------------------
+    Created symlink from /etc/systemd/system/multi-user.target.wants/docker.service to /usr/lib/systemd/system/docker.service.
+    ---------------------------------------------------------------------------------------------------------------------------
+    docker --version
+    --------------------------------------
+    Docker version 19.03.5, build 633a0ea
+    --------------------------------------
+    yum install -y git
+    ----------
+    Complete!
+    ----------
     ```
 1. 次を入力し、Jupyter NotebookのDockerイメージをプルします
     ```
