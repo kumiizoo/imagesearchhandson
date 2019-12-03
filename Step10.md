@@ -1,6 +1,8 @@
 # Image Searchに画像削除
 ###### 10min
 
+注意：[Step4](Step4.md)でImage Searchを購入しなかった方は本Stepを省略してください。
+
 ## Notebookを起動
 1. `http://<<IPアドレス(インターネット)>>:8888/tree/home/jupyter/jupyter-working` にアクセスします
 1. 右上の *New* ボタンを押下し、*Python3* を選択します

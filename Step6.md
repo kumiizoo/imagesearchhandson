@@ -68,7 +68,11 @@ PythonをGUIベースでインタラクティブに実行することができ�
     ACCESS_KEY_SECRET=Step1で作成したImageSearchHandsOnUserのシークレットキー
     REGION=指定されたリージョンの英語表記
     BUCKET_NAME=Step3で作成したOSSバケット名
-    IMAGESEARCH_INSTANCE_NAME=Step5で作成したImage Searchインスタンス名
+    IMAGESEARCH_INSTANCE_NAME=Step4で作成したImage Searchインスタンス名
+    ```
+    **注意：[Step4](Step4.md)でImage Searchを購入しなかった方は `IMAGESEARCH_INSTANCE_NAME` を次の通り記載してください。**
+    ```
+    IMAGESEARCH_INSTANCE_NAME=imagesearchhandson
     ```
 1. 次を入力し、環境変数ファイルを保存します
     ```

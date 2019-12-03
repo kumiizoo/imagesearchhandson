@@ -47,6 +47,15 @@
     imagesearch_endpoint = 'imagesearch.' + region + '.aliyuncs.com'
     client = AcsClient(access_key_id, access_key_secret, region)
     ```
+    **注意：[Step4](Step4.md)でImage Searchを購入しなかった方は以下を実行してください。**
+    ```
+    # Image Search
+    alternative_region = 'ap-southeast-2'
+    alternative_access_key_id = '紙でお渡しします'
+    alternative_access_key_secret = '紙でお渡しします'
+    imagesearch_endpoint = 'imagesearch.' + alternative_region + '.aliyuncs.com'
+    client = AcsClient(alternative_access_key_id, alternative_access_key_secret, alternative_region)
+    ```
 1. 検索条件に文字列属性（文字列属性をブランド名として定義）を付与します。
 実行後、プルダウンが表示されるので好きに調節してください。調節後の再実行は不要です。
     ```
@@ -157,6 +166,7 @@
         except Exception as e:
             print(e, 'error occurred')
         api_result = response
+        print('API Response:')
         print(api_result)
     button = widgets.Button(description="search")
     display(button)
@@ -171,7 +181,7 @@
     # ETL
     dict_data = json.loads(api_result)
     x1, x2, y1, y2 = [int(t) for t in dict_data['PicInfo']['Region'].split(',')]
-    print('result:')
+    print('Result:')
     print(x1, y1, x2, y2)
     display(cropped_image.crop((x1, y1, x2, y2)))
     docs_found = dict_data['Head']['DocsFound']
