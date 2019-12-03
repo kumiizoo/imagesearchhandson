@@ -1,5 +1,5 @@
 # Jupyter Notebookの構築
-###### 25min
+###### 20min
 
 ## Jupyter Notebook
 PythonをGUIベースでインタラクティブに実行することができるオープンソースソフトウェアです。

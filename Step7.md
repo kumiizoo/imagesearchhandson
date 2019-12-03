@@ -45,7 +45,10 @@
     p_temp = pathlib.Path('item_images')
     pprint.pprint(list(p_temp.iterdir()))
     for file in list(p_temp.iterdir()):
+        try:
             bucket.put_object_from_file(str(file), str(file))
+        except Exception as e:
+            print(e, 'error occurred')
     ```
     1. 実行結果例
         ```
