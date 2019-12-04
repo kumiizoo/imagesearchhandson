@@ -149,18 +149,19 @@
         else:
             filters += 'int_attr = ' + str(low_price)
         print('filters: ' + filters)
-        request.set_Filter(filters)
 
         # image
         buf = BytesIO()
         cropped_image.save(buf, format='jpeg')        
         encoded_pic_content = base64.b64encode(buf.getvalue())
 
+        # sending request
         request = SearchImageRequest.SearchImageRequest()
         request.set_endpoint(imagesearch_endpoint)
         request.set_InstanceName(imagesearch_instance_name)
         request.set_Num(20)
         request.set_PicContent(encoded_pic_content)
+        request.set_Filter(filters)
 
         try:
             response = client.do_action_with_exception(request)
