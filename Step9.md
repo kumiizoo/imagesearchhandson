@@ -48,7 +48,7 @@
     imagesearch_endpoint = 'imagesearch.' + region + '.aliyuncs.com'
     client = AcsClient(access_key_id, access_key_secret, region)
     ```
-    **注意：[Step4](Step4.md)でImage Searchを購入しなかった方は以下を実行してください。**
+    **注意：[Step1](Step1.md)でImage Searchを購入しなかった方は以下を実行してください。**
     ```
     # Image Search
     alternative_region = 'ap-southeast-2'

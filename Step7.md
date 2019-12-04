@@ -43,7 +43,7 @@
         ```
 1. 画像をアップロードします
     ```
-    p_temp = pathlib.Path('item_images')
+    p_temp = pathlib.Path('item_image')
     pprint.pprint(list(p_temp.iterdir()))
     for file in list(p_temp.iterdir()):
         try:

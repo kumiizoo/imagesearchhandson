@@ -1,7 +1,7 @@
 # Image Searchに画像削除
 ###### 10min
 
-注意：アカウントをお持ちでない方と[Step4](Step4.md)でImage Searchを購入しなかった方は本Stepを省略してください。
+注意：アカウントをお持ちでない方と[Step1](Step1.md)でImage Searchを購入しなかった方は本Stepを省略してください。
 
 ## Notebookを起動
 1. `http://<<IPアドレス(インターネット)>>:8888/tree/home/jupyter/jupyter-working` にアクセスします

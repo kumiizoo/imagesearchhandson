@@ -20,10 +20,10 @@
 | Step | コンテンツ | 想定エンジニア |
 |:-----|:------------:|:------------:|
 | 0 | [インフラ構成](Step0.md) | - |
-| 1 | [RAMユーザーの作成](Step1.md) | インフラ |
-| 2 | [VPCの構築](Step2.md) | インフラ |
-| 3 | [OSSバケットの構築](Step3.md) | インフラ |
-| 4 | [Image Searchの構築](Step4.md) | インフラ |
+| 1 | [Image Searchの構築](Step1.md) | インフラ |
+| 2 | [RAMユーザーの作成](Step2.md) | インフラ |
+| 3 | [VPCの構築](Step3.md) | インフラ |
+| 4 | [OSSバケットの構築](Step4.md) | インフラ |
 | 5 | [ECSの構築](Step5.md) | インフラ |
 | 6 | [Jupyter Notebookの構築](Step6.md) | アプリ |
 | 7 | [OSSバケットに画像登録](Step7.md) | アプリ |

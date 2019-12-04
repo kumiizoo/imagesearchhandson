@@ -1,31 +1,35 @@
-# OSSバケットの構築
+# VPCの構築
 ###### 5min
 
 注意：アカウントをお持ちでない方は本Stepを省略してください。
 
-## Object Storage Service(OSS)
-Alibaba Cloud上の仮想的なストレージサービスです。バケットと呼ばれる領域に、オブジェクトと呼ばれる画像・動画・ファイル等をアップロード、ダウンロードすることができます。バケットのデフォルトの公開範囲は外部非公開で、権限を持ったRAMユーザーやRAMロールでしかアクセスができません。バケット名はAlibaba Cloud全てでユニークである必要があります。月額でオブジェクトのアップロード総量に応じて課金がされます。
+## Virtual Private Cloud(VPC)
+Alibaba Cloud上の仮想的なネットワーク空間です。VPC内にサーバーやデータベースを構築します。アカウントごとにVPCを構築することができ、他のサービスを使用して他のアカウントのVPCに接続することもできます。
 
-![OSS](img/oss.png)
+![VPC](img/vpc.png)
 
-## OSSバケットの構築
-1. *ストレージと CDN* メニューの *Object Storage Servicee* を選択します
-1. 右の *Bucket 管理* から *バケットの作成* をボタンを押下します
+## VPCの構築
+1. *ネットワークサービス* メニューの *Virtual Private Cloud* を選択します
+1. 左上のリージョンから指定されたリージョンを選択します
+1. 左のメニューから *VPCs* を選択します
+1. *VPC の作成* ボタンを押下します
 1. 次の通り入力します
-    1. *バケット名* : `imagesearchhandson-任意の文字列`
-    1. *リージョン* : 指定されたリージョンごとに選択してください
-        1. *中国（香港）* : `China (Hong Kong)`
-        1. *シンガポール* : `Singapore`
-        1. *オーストラリア（シドニー）* : `Australia (Sydney)`
-        1. *日本（東京）* : `Japan (Tokyo)`
-    1. *ストレージクラス* : `標準ストレージ`
-    1. *ACL* : `非公開`
-    1. *リアルタイムログ照会* : `Disable`
+    1. VPC
+        1. *名前* : `vpc-imagesearchhandson`
+        1. *IPv4 CIDR ブロック* : `10.0.0.0/8`
+    1. VSwitch
+        1. *名前* : `vswitch-imagesearchhandson`
+        1. *ゾーン* : 指定されたリージョンごとに選択してください
+            1. *中国（香港）* : `Hong Kong Zone B`
+            1. *シンガポール* : `Singapore Zone A`
+            1. *オーストラリア（シドニー）* : `Sydney Zone A`
+            1. *日本（東京）* : `Tokyo Zone A`
+    1. *IPv4 CIDR ブロック* : `10.0.0.0/24`
 1. *OK* ボタンを押下します
+1. *完了* ボタンを押下します
 
 ## 参考
-- [OSS公式ドキュメント](https://jp.alibabacloud.com/product/oss)
-- [Alibaba Cloud OSSの画像編集機能を使ってみよう](https://www.sbcloud.co.jp/entry/2017/07/05/alibaba-cloud-oss-object-storage-service-useful-use/)
+- [VPC公式ドキュメント](https://jp.alibabacloud.com/product/vpc)
 
 
 [戻る](Step2.md) | [次へ](Step4.md)

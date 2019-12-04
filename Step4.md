@@ -1,33 +1,31 @@
-# Image Searchの構築
+# OSSバケットの構築
 ###### 5min
 
 注意：アカウントをお持ちでない方は本Stepを省略してください。
 
-## Image Search
-類似画像検索エンジンサービスです。事前に画像を登録することで、画像検索時に登録した画像の情報を類似度順で返却します。登録できる画像枚数と1秒間あたりのクエリ実行可能う数でスペックが決まり、スペックごとに月額サブスクリプションの料金が決まります。
+## Object Storage Service(OSS)
+Alibaba Cloud上の仮想的なストレージサービスです。バケットと呼ばれる領域に、オブジェクトと呼ばれる画像・動画・ファイル等をアップロード、ダウンロードすることができます。バケットのデフォルトの公開範囲は外部非公開で、権限を持ったRAMユーザーやRAMロールでしかアクセスができません。バケット名はAlibaba Cloud全てでユニークである必要があります。月額でオブジェクトのアップロード総量に応じて課金がされます。
 
-![Image Search](img/imagesearch.png)
+![OSS](img/oss.png)
 
-## Image Searchの構築
-1. *ビックデータ* メニューの *Image Search* を選択します
-1. 左上のリージョンから指定されたリージョンを選択します
-1. 左のメニューから *商品画像検索インスタンス* を選択します
-1. *インスタンスの作成* ボタンを押下します
+## OSSバケットの構築
+1. *ストレージと CDN* メニューの *Object Storage Servicee* を選択します
+1. 右の *Bucket 管理* から *バケットの作成* をボタンを押下します
 1. 次の通り入力します
-    1. *リージョン* : `指定されたリージョン`
-    1. *検索タイプ* : `商品画像検索`
-    1. *クエリ/秒* : `1クエリ/秒`
-    1. *キャパシティ* : `10万枚`
-    1. *インスタンス名* : `imagesearchhandson`
-    1. *購入期間* : `1ヶ月`
-1. *費用* が **¥.0.00 JPY** であることを確認します。**そうでない方はお知らせください**
-1. *今すぐ購入* ボタンを押下します
+    1. *バケット名* : `imagesearchhandson-任意の文字列`
+    1. *リージョン* : 指定されたリージョンごとに選択してください
+        1. *中国（香港）* : `China (Hong Kong)`
+        1. *シンガポール* : `Singapore`
+        1. *オーストラリア（シドニー）* : `Australia (Sydney)`
+        1. *日本（東京）* : `Japan (Tokyo)`
+    1. *ストレージクラス* : `標準ストレージ`
+    1. *ACL* : `非公開`
+    1. *リアルタイムログ照会* : `Disable`
+1. *OK* ボタンを押下します
 
 ## 参考
-- [Image Search公式ドキュメント](https://jp.alibabacloud.com/product/imagesearch)
-- [ImageSearchデモツールを作って見た](https://www.sbcloud.co.jp/entry/2019/11/13/184025)
-- [Alibaba Cloud「Image Search」でオリジナル画像検索エンジンを作ろう！](https://www.sbcloud.co.jp/entry/2018/08/06/imagesearch_001/)
-- [Image SearchによるECサイト向け 類似画像検索のベストプラクティス](https://www.slideshare.net/sbcloud/image-searchec)
+- [OSS公式ドキュメント](https://jp.alibabacloud.com/product/oss)
+- [Alibaba Cloud OSSの画像編集機能を使ってみよう](https://www.sbcloud.co.jp/entry/2017/07/05/alibaba-cloud-oss-object-storage-service-useful-use/)
 
 
 [戻る](Step3.md) | [次へ](Step5.md)
