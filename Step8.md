@@ -1,8 +1,6 @@
 # Image Searchに画像登録
 ###### 15min
 
-注意：アカウントをお持ちでない方と[Step4](Step4.md)でImage Searchを購入しなかった方は本Stepを省略してください。
-
 ## Notebookを起動
 1. `http://<<IPアドレス(インターネット)>>:8888/tree/home/jupyter/jupyter-working` にアクセスします
 1. 右上の *New* ボタンを押下し、*Python3* を選択します
