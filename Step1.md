@@ -1,6 +1,8 @@
 # RAMユーザーの作成
 ###### 10min
 
+注意：アカウントをお持ちでない方は本Stepを省略してください。
+
 ## Resource Access Management(RAM)
 Alibaba Cloudリソースをアカウントに代わって他のユーザーやAlibaba Cloudサービスが使えるようにするサービスです。
 
@@ -67,6 +69,7 @@ Alibaba Cloudリソースをアカウントに代わって他のユーザーやA
 
 ## 参考
 - [RAM公式ドキュメント](https://jp.alibabacloud.com/product/ram)
+- [プライマリアカウントのセキュリティのベストプラクティス](https://jp.alibabacloud.com/help/doc-detail/93245.htm)
 
 
 [戻る](Step0.md) | [次へ](Step2.md)

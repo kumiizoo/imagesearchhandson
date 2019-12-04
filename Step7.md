@@ -5,6 +5,7 @@
 1. `http://<<IPアドレス(インターネット)>>:8888/tree/home/jupyter/jupyter-working` にアクセスします
 1. 右上の *New* ボタンを押下し、*Python3* を選択します
 1. Notebookに名前 `uploadImages` をつけます
+    1. 注意：アカウントをお持ちでない方はNotebookに名前 `uploadImages-任意の文字列` をつけてください
 
 ## 画像登録
 以降、手順ごとにソースをNotebookのCellに貼っていき、*shift + Enter* をしてください。

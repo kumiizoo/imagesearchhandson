@@ -31,3 +31,7 @@
 | 9 | [Image Searchで画像検索](Step9.md) | アプリ |
 | 10 | [Image Searchに画像削除](Step10.md) | アプリ |
 | 11 | [後片付け](Step11.md) | -      |
+
+## 参考
+- [Alibaba Cloud 登録マニュアル](https://www.sbcloud.co.jp/document/account_registration)
+- [Alibaba Cloud コンソール](https://jp.alibabacloud.com/help/doc-detail/47605.htm)

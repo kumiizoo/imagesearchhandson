@@ -5,6 +5,7 @@
 1. `http://<<IPアドレス(インターネット)>>:8888/tree/home/jupyter/jupyter-working` にアクセスします
 1. 右上の *New* ボタンを押下し、*Python3* を選択します
 1. Notebookに名前 `searchImages` をつけます
+    1. 注意：アカウントをお持ちでない方はNotebookに名前 `searchImages-任意の文字列` をつけてください
 
 ## 画像検索
 以降、手順ごとにソースをNotebookのCellに貼っていき、*shift + Enter* をしてください。
