@@ -1,4 +1,4 @@
-# Image Searchで画像検索
+  # Image Searchで画像検索
 ###### 30min
 
 ## Notebookを起動
@@ -96,11 +96,11 @@
 
         w, h = image.size
         if w > h:
-            w = 1024
+            w = 512
             h = int(round(image.height * w / image.width))
             original_image = image.resize((w, h))
         else:
-            h = 1024
+            h = 512
             w = int(round(image.width * h / image.height))
             original_image = image.resize((w, h))
         display(original_image)
