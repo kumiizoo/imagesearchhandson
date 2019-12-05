@@ -5,6 +5,9 @@
 - [Alibaba Cloud 画像検索ハンズオン](https://alibabacloud.connpass.com/event/153504/)
   - [Image Searchの説明]()
 
+## ハンズオンに入る前のお願い
+本ハンズオンではJupyter Notebookを構築するため、Jupyter Notebookが構築できる状態になったECSイメージを配布します。ECS配布イメージには **アカウントIDが必要となるため、配布にご同意いただける方は、お配りした色付きの付箋にアカウントIDの記載をお願いいたします。** 休憩中に回収させていただきます。配布したECSイメージは[Step5](Step5.md)で使用します。配布にご同意いただかなくても、Jupyter Notebookは構築できます。配布する場合に比べて10分程お時間がかかります。
+
 ## タイムテーブル
 | Timeline | Title |
 |:-----:|:------------:|
@@ -31,6 +34,7 @@
 | 9 | [Image Searchで画像検索](Step9.md) | アプリ |
 | 10 | [Image Searchに画像削除](Step10.md) | アプリ |
 | 11 | [後片付け](Step11.md) | -      |
+| 12 | [Image Searchに任意の画像を登録](Appendix.md) | アプリ |
 
 ## 参考
 - [Alibaba Cloud 登録マニュアル](https://www.sbcloud.co.jp/document/account_registration)

@@ -18,7 +18,7 @@ Alibaba Cloudリソースをアカウントに代わって他のユーザーやA
   - `ImageSearchHandsOnUser`
 
 ## `AdminUser` の作成
-1. Alibaba Cloudコンソールにログインします
+1. Alibaba CloudコンソールにアカウントIDでログインします
 1. *マネジメント* メニューの *Resource Access Management* を選択します
 1. 左のメニューから *ユーザー* を選択します
 1. 右上の *新規ユーザー* ボタンを押下します

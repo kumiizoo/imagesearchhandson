@@ -22,7 +22,7 @@ PythonをGUIベースでインタラクティブに実行することができ�
     Are you sure you want to continue connecting (yes/no)? >> yes
     root@<<IPアドレス(インターネット)>>'s password: >> <<Step5で指定したパスワード>>
     ```
-1. 次を入力し、Jupyter Notebookを起動させるDockerとGitをインストールします。`-` に囲われた内容は実行結果抜粋です。
+1. 次を入力し、Jupyter Notebookを起動させるDockerとGitをインストールします。`-` に囲われた内容は実行結果抜粋です。**ECSイメージ配布にご同意した方はスキップしてください・**
     ```
     yum -y update
     ----------
