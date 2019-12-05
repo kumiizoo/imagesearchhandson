@@ -48,7 +48,7 @@
     imagesearch_endpoint = 'imagesearch.' + region + '.aliyuncs.com'
     client = AcsClient(access_key_id, access_key_secret, region)
     ```
-    **注意：[Step1](Step1.md)でImage Searchを購入しなかった方は以下を実行してください。**
+    **注意：自信のアカウントを持ち、[Step1](Step1.md)でImage Searchを購入しなかった方は以下を実行してください。**
     ```
     # Image Search
     alternative_region = 'ap-southeast-2'
@@ -118,7 +118,6 @@
     def _crop(x1=0, y1=0, x2=original_image.width, y2=original_image.height):
         global original_image
         global cropped_image
-        global region
 
         cropped_image = original_image.crop((x1, y1, x2, y2))
         display(cropped_image)
@@ -130,9 +129,6 @@
     # Sending request to Image Search
     api_result = ''
     def _on_button_clicked(change):
-        global str_attr
-        global int_attr
-        global cropped_image
         global api_result
 
         # str_attr

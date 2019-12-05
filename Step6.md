@@ -92,7 +92,7 @@ PythonをGUIベースでインタラクティブに実行することができ�
         ```
 1. 次を入力し、Jupyter NotebookのDockerコンテナを起動します
     ```
-    docker run -v /root/imagesearchhandson:/home/jupyter/jupyter-working --env-file=env -d -p 8888:8888 -u root notebook
+    docker run --rm -v /root/imagesearchhandson:/home/jupyter/jupyter-working --env-file=env -d -p 8888:8888 -u root notebook
     ```
     1. 実行結果例
         ```

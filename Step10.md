@@ -31,7 +31,7 @@
 1. OSSクライアントをセットアップします
     ```
     # OSS
-    oss_endpoint = 'oss-' + region + '-internal.aliyuncs.com'
+    oss_endpoint = 'oss-' + region + '.aliyuncs.com'
     auth = oss2.Auth(access_key_id, access_key_secret)
     bucket = oss2.Bucket(auth, oss_endpoint, bucket_name)
     item_data_file_name = 'item_data.csv'

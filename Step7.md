@@ -16,6 +16,7 @@
     import os
     import pathlib
     import pprint
+    import zipfile
     ```
 1. 環境変数を読み込みます
     ```
@@ -28,14 +29,14 @@
 1. OSSクライアントをセットアップします
     ```
     # OSS
-    oss_endpoint = 'oss-' + region + '-internal.aliyuncs.com'
+    oss_endpoint = 'oss-' + region + '.aliyuncs.com'
     auth = oss2.Auth(access_key_id, access_key_secret)
     bucket = oss2.Bucket(auth, oss_endpoint, bucket_name)
     ```
 1. 画像情報をアップロードします
     ```
     # Uploading item data
-    bucket.put_object_from_file('item_data.csv', 'item_data/item_data.csv')
+    bucket.put_object_from_file('item_data.csv', 'item_data.csv')
     ```
     1. 実行結果例
         ```
@@ -43,6 +44,8 @@
         ```
 1. 画像をアップロードします
     ```
+    with zipfile.ZipFile('item_image.zip') as existing_zip:
+        existing_zip.extractall()
     p_temp = pathlib.Path('item_image')
     pprint.pprint(list(p_temp.iterdir()))
     for file in list(p_temp.iterdir()):
@@ -63,6 +66,6 @@
 ## 参考
 - [Alibaba Cloud公式OSS Python SDK](https://github.com/aliyun/aliyun-oss-python-sdk)
 - [Alibaba Cloud公式Core Python SDK](https://github.com/aliyun/aliyun-openapi-python-sdk/tree/master/aliyun-python-sdk-core)
-
+- [画像元 Unsplash](https://unsplash.com/)
 
 [戻る](Step6.md) | [次へ](Step8.md)
