@@ -64,6 +64,7 @@
             response = client.do_action_with_exception(request)
             print(response)
             time.sleep(1)
+        print('Deleting finish')
     except Exception as e:
         print(e, 'error occurred')
     ```

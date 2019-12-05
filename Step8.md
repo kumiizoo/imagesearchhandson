@@ -84,16 +84,16 @@
                 request.set_IntAttr(int_attr)
                 request.set_StrAttr(str_att)
                 request.set_CustomContent(custom_content)
-                encoded_pic_content = base64.b64encode(bucket.get_object(key=object_path).read())
+                encoded_pic_content = base64.b64encode(bucket.get_object(key=object_path,process='image/resize,l_512').read())
                 request.set_PicContent(encoded_pic_content)
                 response = client.do_action_with_exception(request)
                 print(response)
                 time.sleep(1)
-
+            print('Registering finish')
         except Exception as e:
             print(e, 'error occurred')
     ```
-1. 画像情報ファイルを元に画像登録をします
+1. 画像情報ファイルを元に画像登録をします。720枚あるのでやや時間がかかります。休憩後に終わっていなかった場合は先に進めてください。
     ```
     register_images('item_data.csv')
     ```
@@ -107,6 +107,8 @@
         str_att:SB and 1
         custom_content:{"color": "0078FF"}
         b'{"Message":"success","PicInfo":{"CategoryId":4,"Region":"95,386,517,895"},"RequestId":"F4527A98-F016-4361-8504-58F4D3A454F9","Success":true,"Code":0}'
+        ...
+        Registering finish
         ```
 
 ## Image Searchに追加で画像登録

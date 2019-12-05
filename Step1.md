@@ -25,6 +25,17 @@ Image Searchの有効化兼初期購入はアカウントでしかできない(R
 1. *費用* が **¥.0.00 JPY** であることを確認します。**そうでない方はお知らせください**
 1. *今すぐ購入* ボタンを押下します
 
+## Image Searchの購入画面で中国語のページに飛んでしまった方へ
+リージョンごとのImage Search購入URLから直接アクセスして、購入してください。
+- 中国（香港）
+    - https://common-buy-intl.alibabacloud.com/imagesearch/prepay?request=%7B%22region%22:%22cn-hongkong%22,%22serviceType%22:%220%22%7D#/buy
+- シンガポール
+    - https://common-buy-intl.alibabacloud.com/imagesearch/prepay?request=%7B%22region%22:%22ap-southeast-1%22,%22serviceType%22:%220%22%7D#/buy
+- オーストラリア（シドニー）
+    - https://common-buy-intl.alibabacloud.com/imagesearch/prepay?request=%7B%22region%22:%22ap-southeast-2%22,%22serviceType%22:%220%22%7D#/buy
+- 日本（東京）
+    - https://common-buy-intl.alibabacloud.com/imagesearch/prepay?request=%7B%22region%22:%22ap-northeast-1%22,%22serviceType%22:%220%22%7D#/buy
+
 ## 参考
 - [Image Search公式ドキュメント](https://jp.alibabacloud.com/product/imagesearch)
 - [ImageSearchデモツールを作って見た](https://www.sbcloud.co.jp/entry/2019/11/13/184025)

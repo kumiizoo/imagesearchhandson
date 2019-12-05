@@ -15,7 +15,6 @@
     import oss2
     import os
     import pathlib
-    import pprint
     import zipfile
     ```
 1. 環境変数を読み込みます
@@ -42,25 +41,25 @@
         ```
         <oss2.models.PutObjectResult at 0x7f3b91c73c18>
         ```
-1. 画像をアップロードします
+1. 画像をアップロードします。720枚あるのでやや時間がかかります。
     ```
     with zipfile.ZipFile('item_image.zip') as existing_zip:
         existing_zip.extractall()
     p_temp = pathlib.Path('item_image')
-    pprint.pprint(list(p_temp.iterdir()))
     for file in list(p_temp.iterdir()):
         try:
+            print(file)
             bucket.put_object_from_file(str(file), str(file))
         except Exception as e:
             print(e, 'error occurred')
+    print('Uploading finish')
     ```
     1. 実行結果例
         ```
-        [PosixPath('item_images/36b3147a-2323-309c-1a8d-fe401b060a98.jpg'),
-         PosixPath('item_images/43229f01-3c41-6c12-3e46-f10512829783.jpg'),
-         PosixPath('item_images/b9ecf850-cf1b-3ae2-9ae4-c9446c9f8db2.jpg'),
-         PosixPath('item_images/4202d137-cf32-ae98-de80-f1d515440713.jpg'),
-         PosixPath('item_images/f2b45adc-4023-009a-6068-dbd57678f2f2.jpg'),
+        item_image/isaw-company-7ID6oJrmePY-unsplash.jpg
+        item_image/atul-vinayak-jKvwtbrxzdY-unsplash.jpg
+        ...
+        Uploading finish
         ```
 
 ## 参考

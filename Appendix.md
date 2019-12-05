@@ -21,6 +21,7 @@
     import os
     import oss2
     import fileupload
+    import json
     import aliyunsdkimagesearch.request.v20190325.AddImageRequest as AddImageRequest
     ```
 1. 環境変数を読み込みます
@@ -54,7 +55,7 @@
     imagesearch_endpoint = 'imagesearch.' + alternative_region + '.aliyuncs.com'
     client = AcsClient(alternative_access_key_id, alternative_access_key_secret, alternative_region)
     ```
-1. 画像アップロードフォームを作ります。実行後、フォームが表示されるので画像を１枚アップロードしてください。アップロード後の再実行は不要です。アップロード後は画像が表示されます。
+1. 画像アップロードフォームを作ります。実行後、フォームが表示されるので画像を１枚アップロードしてください。アップロード後の再実行は不要です。アップロード後は画像が表示されますが、やや時間がかかります。Jupyter Notebookは画像処理速度を追い求めたソフトウェアではないので目を瞑ってください。
     ```
     # Uploding Image
     original_image = ''
@@ -96,11 +97,11 @@
 1. 画像にカテゴリを付与します。実行後、プルダウンが表示されるので好きに調節してください。調節後の再実行は不要です。
     ```
     # Selecting Category
-    category_id = -1
+    category_id = 0
     def select_category_id(Category):
         global category_id
         category_id = Category
-    interact(select_category_id, Category=widgets.Dropdown[('Tops', 0), ('Dresses', 1), ('Bottoms', 2), ('Bags', 3), ('Shoes', 4), ('Accessories', 5), ('Snacks', 6), ('Makeup', 7), ('Bottle drinks', 8), ('Furniture', 9), ('Toys', 20), ('Underwears', 21), ('Digital devices', 22), ('Others', 88888888)]);
+    interact(select_category_id, Category=widgets.Dropdown(options=[('Tops', 0), ('Dresses', 1), ('Bottoms', 2), ('Bags', 3), ('Shoes', 4), ('Accessories', 5), ('Snacks', 6), ('Makeup', 7), ('Bottle drinks', 8), ('Furniture', 9), ('Toys', 20), ('Underwears', 21), ('Digital devices', 22), ('Others', 88888888)]));
     ```    
 1. 画像に文字列属性（文字列属性をブランド名として定義）を付与します。実行後、プルダウンが表示されるので好きに調節してください。調節後の再実行は不要です。
     ```
@@ -118,9 +119,7 @@
     def select_int_attr(Price):
         global int_attr
         int_attr = Price
-        low_price, high_price = int_attr
-        print('¥' + str(low_price) + ' ~ ' + '¥' + str(high_price))
-    interact(select_int_attr, Price=widgets.IntRangeSlider(min=0, max=5000, step=1000, value=[0,5000]));
+    interact(select_int_attr, Price=[1000,2000,3000,4000,5000]);
     ```
 1. 画像登録を定義します。実行後に *register* ボタンが表示されるので押下してください。OSSへの画像登録とImage Searchに画像登録リクエストを送ります。
     ```
@@ -144,11 +143,10 @@
             request.set_InstanceName(imagesearch_instance_name)
             request.set_ProductId(image_name)
             request.set_PicName(image_name)
-            if category_id != -1:
-              request.set_CategoryId(category_id)
+            request.set_CategoryId(category_id)
             request.set_IntAttr(int_attr)
-            if str_att != '':
-              request.set_StrAttr(str_att)
+            if str_attr != '':
+              request.set_StrAttr(str_attr)
             request.set_PicContent(encoded_pic_content)
             response = client.do_action_with_exception(request)
             api_result = response
