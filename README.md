@@ -3,7 +3,7 @@
 
 ## AliEaters Code支部 第3回
 - [Alibaba Cloud 画像検索ハンズオン](https://alibabacloud.connpass.com/event/153504/)
-  - [Image Searchの説明]()
+  - [Image Searchの説明](https://www.slideshare.net/AnzaiKumiko/ali-eaterscodebranch-3image-search-introduction-202440639)
 
 ## ハンズオンに入る前のお願い
 本ハンズオンではJupyter Notebookを構築するため、Jupyter Notebookが構築できる状態になったECSイメージを配布します。ECS配布イメージには **アカウントIDが必要となるため、配布にご同意いただける方は、お配りした色付きの付箋にアカウントIDの記載をお願いいたします。** 休憩中に回収させていただきます。配布したECSイメージは[Step5](Step5.md)で使用します。配布にご同意いただかなくても、Jupyter Notebookは構築できます。配布する場合に比べて10分程お時間がかかります。
