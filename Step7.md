@@ -9,6 +9,16 @@
 
 ## 画像登録
 以降、手順ごとにソースをNotebookのCellに貼っていき、*shift + Enter* をしてください。
+1. 環境変数に正しい値がセットされていることを確認します。値が合っていることを確認してください。
+    ```
+    # Checking ENV
+    import os
+    print('ACCESS_KEY_ID:' + os.environ['ACCESS_KEY_ID'])
+    print('ACCESS_KEY_SECRET:' + os.environ['ACCESS_KEY_SECRET'])
+    print('REGION:' + os.environ['REGION'])
+    print('BUCKET_NAME:' + os.environ['BUCKET_NAME'])
+    print('IMAGESEARCH_INSTANCE_NAME:' + os.environ['IMAGESEARCH_INSTANCE_NAME'])
+    ```
 1. 必要なライブラリを読み込みます
     ```
     from aliyunsdkcore.client import AcsClient
