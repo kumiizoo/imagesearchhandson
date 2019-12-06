@@ -55,7 +55,7 @@
     imagesearch_endpoint = 'imagesearch.' + alternative_region + '.aliyuncs.com'
     client = AcsClient(alternative_access_key_id, alternative_access_key_secret, alternative_region)
     ```
-1. 画像アップロードフォームを作ります。実行後、フォームが表示されるので画像を１枚アップロードしてください。アップロード後の再実行は不要です。アップロード後は画像が表示されますが、やや時間がかかります。Jupyter Notebookは画像処理速度を追い求めたソフトウェアではないので目を瞑ってください。
+1. 画像アップロードフォームを作ります。実行後、フォームが表示されるので画像を1枚アップロードしてください。アップロード後の再実行は不要です。アップロード後は画像が表示されますが、やや時間がかかります。Jupyter Notebookは画像処理速度を追い求めたソフトウェアではないので目を瞑ってください。
     ```
     # Uploding Image
     original_image = ''
