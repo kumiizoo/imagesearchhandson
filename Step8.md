@@ -31,7 +31,7 @@
 1. OSSクライアントをセットアップします
     ```
     # OSS
-    oss_endpoint = 'oss-' + region + '-internal.aliyuncs.com'
+    oss_endpoint = 'oss-' + region + '.aliyuncs.com'
     auth = oss2.Auth(access_key_id, access_key_secret)
     bucket = oss2.Bucket(auth, oss_endpoint, bucket_name)
     ```
@@ -40,8 +40,16 @@
     # Image Search
     imagesearch_endpoint = 'imagesearch.' + region + '.aliyuncs.com'
     client = AcsClient(access_key_id, access_key_secret, region)
-
     ```
+    **注意：自信のアカウントを持ち、[Step1](Step1.md)でImage Searchを購入しなかった方は以下を実行してください。**
+    ```
+    # Image Search
+    alternative_region = 'ap-southeast-2'
+    alternative_access_key_id = '紙でお渡しします'
+    alternative_access_key_secret = '紙でお渡しします'
+    imagesearch_endpoint = 'imagesearch.' + alternative_region + '.aliyuncs.com'
+    client = AcsClient(alternative_access_key_id, alternative_access_key_secret, alternative_region)
+    ```    
 1. 画像登録関数を定義します
     ```
     # Registering images
@@ -76,16 +84,16 @@
                 request.set_IntAttr(int_attr)
                 request.set_StrAttr(str_att)
                 request.set_CustomContent(custom_content)
-                encoded_pic_content = base64.b64encode(bucket.get_object(key=object_path,process='image/resize,l_1024').read())
+                encoded_pic_content = base64.b64encode(bucket.get_object(key=object_path,process='image/resize,l_512').read())
                 request.set_PicContent(encoded_pic_content)
                 response = client.do_action_with_exception(request)
                 print(response)
                 time.sleep(1)
-
+            print('Registering finish')
         except Exception as e:
             print(e, 'error occurred')
     ```
-1. 画像情報ファイルを元に画像登録をします
+1. 画像情報ファイルを元に画像登録をします。720枚あるのでやや時間がかかります。休憩後に終わっていなかった場合は先に進めてください。
     ```
     register_images('item_data.csv')
     ```
@@ -99,10 +107,14 @@
         str_att:SB and 1
         custom_content:{"color": "0078FF"}
         b'{"Message":"success","PicInfo":{"CategoryId":4,"Region":"95,386,517,895"},"RequestId":"F4527A98-F016-4361-8504-58F4D3A454F9","Success":true,"Code":0}'
+        ...
+        Registering finish
         ```
+
+## Image Searchに追加で画像登録
+好きな画像をImage Searchに登録したい方は[Appendix](Appendix.md)に進んでください。
 
 ## 参考
 - [Alibaba Cloud公式Image Search Python SDK](https://github.com/aliyun/aliyun-openapi-python-sdk/tree/master/aliyun-python-sdk-imagesearch)
-
 
 [戻る](Step7.md) | [次へ](Step9.md)

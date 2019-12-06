@@ -1,6 +1,11 @@
   # Image Searchで画像検索
 ###### 30min
 
+## サンプル画像をダウンロード
+Image Searchをすぐに試してもらうために、検索をするサンプル画像を13枚用意しました。ローカルPCにダウンロードしてお使いください。
+1. `http://<<IPアドレス(インターネット)>>:8888/tree/home/jupyter/jupyter-working/sample_image` にアクセスします
+1. チェックボックスをつけ、画像を1枚ずつダウンロードしてください
+
 ## Notebookを起動
 1. `http://<<IPアドレス(インターネット)>>:8888/tree/home/jupyter/jupyter-working` にアクセスします
 1. 右上の *New* ボタンを押下し、*Python3* を選択します
@@ -48,7 +53,7 @@
     imagesearch_endpoint = 'imagesearch.' + region + '.aliyuncs.com'
     client = AcsClient(access_key_id, access_key_secret, region)
     ```
-    **注意：[Step1](Step1.md)でImage Searchを購入しなかった方は以下を実行してください。**
+    **注意：自信のアカウントを持ち、[Step1](Step1.md)でImage Searchを購入しなかった方は以下を実行してください。**
     ```
     # Image Search
     alternative_region = 'ap-southeast-2'
@@ -83,7 +88,7 @@
     ```
     1. 実行結果例
         ![数値属性](img/int_attr.png)
-1. 画像アップロードフォームを作ります。実行後、フォームが表示されるので画像を１枚アップロードしてください。アップロード後の再実行は不要です。アップロード後は画像が表示されます。
+1. 画像アップロードフォームを作ります。実行後、フォームが表示されるので、ダウンロードしたサンプル画像を1枚アップロードしてください。アップロード後の再実行は不要です。アップロード後は画像が表示されますが、やや時間がかかります。Jupyter Notebookは画像処理速度を追い求めたソフトウェアではないので目を瞑ってください。
     ```
     # Uploding Image
     original_image = ''
@@ -118,7 +123,6 @@
     def _crop(x1=0, y1=0, x2=original_image.width, y2=original_image.height):
         global original_image
         global cropped_image
-        global region
 
         cropped_image = original_image.crop((x1, y1, x2, y2))
         display(cropped_image)
@@ -130,9 +134,6 @@
     # Sending request to Image Search
     api_result = ''
     def _on_button_clicked(change):
-        global str_attr
-        global int_attr
-        global cropped_image
         global api_result
 
         # str_attr

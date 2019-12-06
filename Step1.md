@@ -4,7 +4,7 @@
 注意：アカウントをお持ちでない方は本Stepを省略してください。
 
 ## Image Search
-類似画像検索エンジンサービスです。事前に画像を登録することで、画像検索時に登録した画像の情報を類似度順で返却します。登録できる画像枚数と1秒間あたりのクエリ実行可能数でスペックが決まり、スペックごとに月額サブスクリプションの料金が決まります。
+類似画像検索エンジンサービスです。事前に画像を登録することで、画像検索時に登録した画像の情報を類似度順で返却します。登録できる画像枚数と1秒間あたりのクエリ実行可能数でスペックが決まり、スペックごとに月額サブスクリプションの料金が決まります。本ハンズオンではImage Searchに登録できる[全カテゴリ](https://jp.alibabacloud.com/help/doc-detail/66623.htm)の画像を登録します。
 
 ![Image Search](img/imagesearch.png)
 
@@ -24,6 +24,17 @@ Image Searchの有効化兼初期購入はアカウントでしかできない(R
     1. *購入期間* : `1ヶ月`
 1. *費用* が **¥.0.00 JPY** であることを確認します。**そうでない方はお知らせください**
 1. *今すぐ購入* ボタンを押下します
+
+## Image Searchの購入画面で中国語のページに飛んでしまった方へ
+リージョンごとのImage Search購入URLから直接アクセスして、購入してください。
+- 中国（香港）
+    - https://common-buy-intl.alibabacloud.com/imagesearch/prepay?request=%7B%22region%22:%22cn-hongkong%22,%22serviceType%22:%220%22%7D#/buy
+- シンガポール
+    - https://common-buy-intl.alibabacloud.com/imagesearch/prepay?request=%7B%22region%22:%22ap-southeast-1%22,%22serviceType%22:%220%22%7D#/buy
+- オーストラリア（シドニー）
+    - https://common-buy-intl.alibabacloud.com/imagesearch/prepay?request=%7B%22region%22:%22ap-southeast-2%22,%22serviceType%22:%220%22%7D#/buy
+- 日本（東京）
+    - https://common-buy-intl.alibabacloud.com/imagesearch/prepay?request=%7B%22region%22:%22ap-northeast-1%22,%22serviceType%22:%220%22%7D#/buy
 
 ## 参考
 - [Image Search公式ドキュメント](https://jp.alibabacloud.com/product/imagesearch)

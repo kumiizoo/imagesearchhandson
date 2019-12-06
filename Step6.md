@@ -9,10 +9,11 @@ PythonをGUIベースでインタラクティブに実行することができ�
 
 ## Jupyter Notebookの構築
 1. *仮想サーバー* メニューの *Elastic Compute Service* を選択します
-1. 左上のリージョンから指定されたリージョンを選択します
 1. 左のメニューから *インスタンス* を選択します
+1. 左上のリージョンから指定されたリージョンを選択します
 1. `ecs-imagesearchhandson` の *IPアドレス(インターネット)* をメモします
-1. 左上の *Cloud Shell* アイコンボタンを押下します（下記参照）
+1. `ecs-imagesearchhandson` の *ステータス* が *実行中* になっていることを確認します
+1. 右上の *Cloud Shell* アイコンボタンを押下します（下記参照）
     1. Cloud Shellのアイコン
         ![Cloud Shell](img/cloudshell.png)
 1. *ストレージスペース* に関するモーダルの *スキップ* を選択
@@ -22,7 +23,7 @@ PythonをGUIベースでインタラクティブに実行することができ�
     Are you sure you want to continue connecting (yes/no)? >> yes
     root@<<IPアドレス(インターネット)>>'s password: >> <<Step5で指定したパスワード>>
     ```
-1. 次を入力し、Jupyter Notebookを起動させるDockerとGitをインストールします。`-` に囲われた内容は実行結果抜粋です。**ECSイメージ配布にご同意した方はスキップしてください・**
+1. 次を入力し、Jupyter Notebookを起動させるDockerとGitをインストールします。`-` に囲われた内容は実行結果抜粋です。**ECSイメージ配布にご同意した方はこの手順をスキップしてください・**
     ```
     yum -y update
     ----------
@@ -81,7 +82,7 @@ PythonをGUIベースでインタラクティブに実行することができ�
     ECSキーを押下
     :wq
     ```
-1. 次を入力し、Jupyter NotebookのDockerイメージをビルドします
+1. 次を入力し、Jupyter NotebookのDockerイメージをビルドします。途中で次の通り赤文字の `Failed` メッセージが表示されますが、無視してください。
     ```
     docker image build -t notebook .
     ```
@@ -90,9 +91,17 @@ PythonをGUIベースでインタラクティブに実行することができ�
         Successfully built 3c9cbc7b6585
         Successfully tagged notebook:latest
         ```
+    1. `Failed` メッセージ一覧
+        ```
+        Failed building wheel for aliyun-python-sdk-core-v3
+        Failed building wheel for oss2
+        Failed building wheel for aliyun-python-sdk-kms
+        Failed building wheel for crcmod
+        Failed building wheel for aliyun-python-sdk-core
+        ```
 1. 次を入力し、Jupyter NotebookのDockerコンテナを起動します
     ```
-    docker run -v /root/imagesearchhandson:/home/jupyter/jupyter-working --env-file=env -d -p 8888:8888 -u root notebook
+    docker run --rm -v /root/imagesearchhandson:/home/jupyter/jupyter-working --env-file=env -d -p 8888:8888 -u root notebook
     ```
     1. 実行結果例
         ```
@@ -126,6 +135,5 @@ PythonをGUIベースでインタラクティブに実行することができ�
 ## 参考
 - [Cloud Shell公式ドキュメント](https://jp.alibabacloud.com/help/doc-detail/90395.htm)
 - [Alibaba CloudのCloud Shellでは何ができるか](https://www.sbcloud.co.jp/entry/2019/01/08/cloudshell/)
-
 
 [戻る](Step5.md) | [次へ](Step7.md)

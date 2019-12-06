@@ -34,7 +34,7 @@
 | 9 | [Image Searchで画像検索](Step9.md) | アプリ |
 | 10 | [Image Searchに画像削除](Step10.md) | アプリ |
 | 11 | [後片付け](Step11.md) | -      |
-| 12 | [Image Searchに任意の画像を登録](Appendix.md) | アプリ |
+| 12 | [[付録]Image Searchに追加で画像登録](Appendix.md) | アプリ |
 
 ## 参考
 - [Alibaba Cloud 登録マニュアル](https://www.sbcloud.co.jp/document/account_registration)
