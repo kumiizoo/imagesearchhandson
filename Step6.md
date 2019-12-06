@@ -136,5 +136,4 @@ PythonをGUIベースでインタラクティブに実行することができ�
 - [Cloud Shell公式ドキュメント](https://jp.alibabacloud.com/help/doc-detail/90395.htm)
 - [Alibaba CloudのCloud Shellでは何ができるか](https://www.sbcloud.co.jp/entry/2019/01/08/cloudshell/)
 
-
 [戻る](Step5.md) | [次へ](Step7.md)
