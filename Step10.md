@@ -75,5 +75,8 @@
         b'{"Message":"success","RequestId":"9A7F8BAB-F3D1-44C3-B3D5-3BE76C30F03D","Success":true,"Code":0}'
         ```
 
+## 参考
+- [画像の削除 - 開発者ガイド](https://jp.alibabacloud.com/help/doc-detail/113694.htm)
+
 
 [戻る](Step9.md) | [次へ](Step11.md)
