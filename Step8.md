@@ -116,5 +116,6 @@
 
 ## 参考
 - [Alibaba Cloud公式Image Search Python SDK](https://github.com/aliyun/aliyun-openapi-python-sdk/tree/master/aliyun-python-sdk-imagesearch)
+- [画像の追加 - 開発者ガイド](https://jp.alibabacloud.com/help/doc-detail/113679.htm)
 
 [戻る](Step7.md) | [次へ](Step9.md)
