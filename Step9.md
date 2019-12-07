@@ -235,6 +235,7 @@ Image Searchをすぐに試してもらうために、検索をするサンプ�
 1. 再検索をしたい場合は `5.` 以降を全てを再実行してください
 
 ## 参考
+- [画像の検索 - 開発者ガイド](https://jp.alibabacloud.com/help/doc-detail/113680.htm)
 - [IPython API](https://ipython.readthedocs.io/en/stable/index.html)
 - [ipywidgets API](https://ipywidgets.readthedocs.io/en/latest/index.html)
 - [PIL API](https://pillow.readthedocs.io/en/3.1.x/index.html)
