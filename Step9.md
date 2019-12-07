@@ -166,11 +166,11 @@ Image Searchをすぐに試してもらうために、検索をするサンプ�
 
         try:
             response = client.do_action_with_exception(request)
+            api_result = response
+            print('API Response:')
+            print(api_result)
         except Exception as e:
             print(e, 'error occurred')
-        api_result = response
-        print('API Response:')
-        print(api_result)
     button = widgets.Button(description="search")
     display(button)
     button.on_click(_on_button_clicked)
