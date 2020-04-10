@@ -96,7 +96,9 @@ Image Searchをすぐに試してもらうために、検索をするサンプ�
             h = 512
             w = int(round(image.width * h / image.height))
             original_image = image.resize((w, h))
+
         display(original_image)
+
     uploader = fileupload.FileUploadWidget()
     display(uploader)
     uploader.observe(_on_upload, names='data')
@@ -114,12 +116,14 @@ Image Searchをすぐに試してもらうために、検索をするサンプ�
 
         cropped_image = original_image.crop((x1, y1, x2, y2))
         cropped_region_list = [x1, x2, y1, y2]
+
         display(cropped_image)
     ```
     1. 実行結果例
         ![トリミング](img/cropping.png)
 1. 画像検索関数を定義します。実行後に *search* ボタンが表示されるので押下してください。主な処理内容は以下の通りです。
     1. 検索条件を変数にセットします。各変数に入っている値の例を上げます。
+
     |変数名|値|意味|
     |:---|:---|:---|
     |`str_attr`|`SB and 1`|文字列型属性|
@@ -128,6 +132,7 @@ Image Searchをすぐに試してもらうために、検索をするサンプ�
     |`cropped_region`|`[0, 683, 0, 1024]`|画像の被写体範囲|
     |`returned_items_number`|`2000`|検索結果の戻り値の数|
     |`encoded_pic_content`|`data:image/jpeg;base64,/9j/4AAQ...`|Base64でエンコードした画像|    
+
     1. [画像検索に必要なパラメータ](https://jp.alibabacloud.com/help/doc-detail/113680.htm)をHTTPリクエストにセットし、画像検索HTTPリクエストを送ります。
     ```
     # Sending request to Image Search
@@ -174,6 +179,7 @@ Image Searchをすぐに試してもらうために、検索をするサンプ�
             response = client.do_action_with_exception(request)
         except Exception as e:
             print(e, 'error occurred')
+
         api_result = response
         print('API Response:')
         print(api_result)
@@ -188,6 +194,7 @@ Image Searchをすぐに試してもらうために、検索をするサンプ�
         ![レスポンス](img/api_response.png)
 1. 画像検索HTTPレスポンスを整形して、検索結果をまとめます。
     1. 検索結果の例を上げます。
+
     |変数名|値|意味|
     |:---|:---|:---|
     |`docs_found`|`13091`|検索結果の総数|

@@ -56,13 +56,16 @@
     ```
     with zipfile.ZipFile('item_image.zip') as existing_zip:
         existing_zip.extractall()
+
     p_temp = pathlib.Path('item_image')
+
     for file in list(p_temp.iterdir()):
         try:
             print(file)
             bucket.put_object_from_file(str(file), str(file))
         except Exception as e:
             print(e, 'error occurred')
+
     print('Uploading finish')
     ```
     1. 実行結果例
