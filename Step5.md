@@ -48,17 +48,16 @@
     1. `item_data.csv` を1行1カラムずつ読み込み、変数にセットします。
     1. 各変数に入っている値の例を上げます。
 
-    |変数名|値|意味|
-    |:---|:---|:---|
-    |`object_path`|`item_image/015591b0-d38d-30ce-131a-fab83a13cbf3.jpg`|OSSバケット上の画像置き場|
-    |`product_id`|`015591b0-d38d-30ce-131a-fab83a13cbf3`|商品ID|
-    |`picture_name`|`015591b0-d38d-30ce-131a-fab83a13cbf3`|画像名|
-    |`category_id`|`4`|画像カテゴリID|
-    |`int_attr`|`2000`|整数型属性（価格として設定）|
-    |`str_att`|`SB and 1`|文字列型属性（ブランド名として設定）|
-    |`custom_content`|`"{""color"": ""0078FF""}"`|カスタムコンテンツ（カラーコードとして設定）|
-    |`encoded_pic_content`|`data:image/jpeg;base64,/9j/4AAQ...`|Base64でエンコードした画像|
-    
+      |変数名|値|意味|
+      |:---|:---|:---|
+      |`object_path`|`item_image/015591b0-d38d-30ce-131a-fab83a13cbf3.jpg`|OSSバケット上の画像置き場|
+      |`product_id`|`015591b0-d38d-30ce-131a-fab83a13cbf3`|商品ID|
+      |`picture_name`|`015591b0-d38d-30ce-131a-fab83a13cbf3`|画像名|
+      |`category_id`|`4`|画像カテゴリID|
+      |`int_attr`|`2000`|整数型属性（価格として設定）|
+      |`str_att`|`SB and 1`|文字列型属性（ブランド名として設定）|
+      |`custom_content`|`"{""color"": ""0078FF""}"`|カスタムコンテンツ（カラーコードとして設定）|
+      |`encoded_pic_content`|`data:image/jpeg;base64,/9j/4AAQ...`|Base64でエンコードした画像|
     1. [画像登録に必要なパラメータ](https://jp.alibabacloud.com/help/doc-detail/113679.htm)をHTTPリクエストにセットし、画像登録HTTPリクエストを送ります。
     1. 1秒間に実行可能なクエリが1クエリであるため、1秒間スリープします。
     ```
