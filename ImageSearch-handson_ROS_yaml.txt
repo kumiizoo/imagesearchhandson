@@ -1,12 +1,13 @@
 ROSTemplateFormatVersion: '2015-09-01'
 Description: 'Create VPC ECS instance for Cloud Computing Handson for Tokyo。Image Searchのインスタンスは事前に作る。RAMユーザの作成。実行が終わったら、ISAdminUserにスイッチ。ECSにログインしてTokenを確認してください。'
 Parameters:
-
-  RamAdminUserPassword:
+​
+  YourName:
     Type: String
-    NoEcho: true
-    Description: RAM ISAdminUser Password
-
+    AllowedPattern: '[a-zA-Z0-9]*'
+    Description: YourName(Alphabet/Number Only, No Space)
+    Label: Your Name
+​
   Region:
     Type: String
     Description: 使用するリージョンを選択してください。上から、香港、シンガポール、シドニー、東京です。
@@ -19,7 +20,7 @@ Parameters:
       - ap-southeast-2
       # 日本（東京）青色
       - ap-northeast-1
-
+​
   Zone:
     Type: String
     Description: 使用するリージョンのゾーンを選択してください。上から、香港、シンガポール、シドニー、東京です。
@@ -32,12 +33,12 @@ Parameters:
       - ap-southeast-2a
       # 日本（東京）青色
       - ap-northeast-1a
-
-
+​
   ImageSearchInstanceName:
     Type: String
-    Description: Image Search Instance Name
-
+    AllowedPattern: '[a-zA-Z0-9]*'
+    Description: 作成済みインスタンス名を入力してください
+​
   InstanceType:
     Type: String
     Description: ECS Instance Type
@@ -49,37 +50,22 @@ Parameters:
       - ecs.c5.xlarge
     Label: ECS Instance Type
     Default: ecs.t5-lc1m1.small
-
-
+​
+​
   RootPassword:
     Type: String
     NoEcho: true
     Description: ECS root Password
-
-
-  OSSBucketName:
-    Type: String
-    AllowedPattern: '[a-zA-Z0-9/-]*'
-    Default: imagesearchhandson-ownname
-    Description: "ex. imagesearchhandson- + 自分の名前"
-
+    Label: ECS root Password
+​
 Resources:
-  RamAdminUser:
-    Type: 'ALIYUN::RAM::User'
-    Properties:
-      UserName: ISAdminUser
-      DisplayName: ISAdminUser
-      LoginProfile:
-        PasswordResetRequired: false
-        Password:
-          Ref: RamAdminUserPassword
-
+​
   RamImageSearchHandsOnUser:
     Type: 'ALIYUN::RAM::User'
     Properties:
-      UserName: ImageSearchHandsOnUser
-
-
+      UserName: {"Fn::Join": [ "-", ["ImageSearchHandsOnUser", Ref: YourName]]}
+​
+​
   RamImageSearchHandsOnUserAK:
     Type: 'ALIYUN::RAM::AccessKey'
     Properties:
@@ -87,30 +73,30 @@ Resources:
         'Fn::GetAtt':
           - RamImageSearchHandsOnUser
           - UserName
-
+​
+​
   vpc1:
     Type: 'ALIYUN::ECS::VPC'
     Properties:
       CidrBlock: 10.0.0.0/8
-      VpcName: vpc-imagesearchhandson
-
+      VpcName: {"Fn::Join": [ "-", ["vpc-imagesearchhandson", Ref: YourName]]}
+​
   vswitch1:
     Type: 'ALIYUN::ECS::VSwitch'
     Properties:
       VpcId:
         Ref: vpc1
-      VSwitchName: vswitch-imagesearchhandson
+      VSwitchName: {"Fn::Join": [ "-", ["vswitch-imagesearchhandson", Ref: YourName]]}
       ZoneId: ap-northeast-1a
       CidrBlock: 10.0.0.0/24
-
-
+​
+​
   ecs1:
     Type: 'ALIYUN::ECS::Instance'
     Properties:
-      InstanceName: ecs-imagesearchhandson
-      HostName: imagesearchhandson
+      InstanceName: {"Fn::Join": [ "-", ["ecs-imagesearchhandson", Ref: YourName]]}
+      HostName:     {"Fn::Join": [ "-", ["imagesearchhandson", Ref: YourName]]}
       Description: imagesearchhandson
-#      PrivateIpAddress: 10.10.0.10
       ZoneId:
         Ref: Zone
       InstanceType:
@@ -130,7 +116,7 @@ Resources:
         Ref: sg1
       Password:
         Ref: RootPassword
-
+​
       UserData:
         'Fn::Join':
           - ''
@@ -157,58 +143,65 @@ Resources:
             - |
               git clone https://github.com/kanzai935/imagesearchhandson.git;
             - |
+              cd imagesearchhandson;
+            - |
               cat <<EOF > /root/imagesearchhandson/env;
             - ACCESS_KEY_ID=
             - 'Fn::GetAtt':
               - 'RamImageSearchHandsOnUserAK'
               - 'AccessKeyId'
             - |+
-
+​
             - ACCESS_KEY_SECRET=
             - 'Fn::GetAtt':
               - 'RamImageSearchHandsOnUserAK'
               - 'AccessKeySecret'
             - |+
-
+​
             - REGION=
             - Ref: Region
             - |+
-
+​
             - BUCKET_NAME=
-            - Ref: OSSBucketName
+            - 'Fn::GetAtt':
+              - MyBucket
+              - Name
             - |+
-
-
+​
+​
             - IMAGESEARCH_INSTANCE_NAME=
             - Ref: ImageSearchInstanceName
             - |+
-
+​
               EOF
             - |
               docker image build -t notebook .;
             - |
+              echo "## Jupyter Notebook Token: ";
+            - |
               docker run --rm -v /root/imagesearchhandson:/home/jupyter/jupyter-working --env-file=env -d -p 8888:8888 -u root notebook;
             - |
+            　docker logs `docker ps | grep notebook | awk '{print $1}'` 2>&1 | grep "  http://0.0.0.0" -B 2
+            - |
               
-              ) | tee -a /root/userdata-result.txt
+              ) 2>&1 | tee -a /root/userdata-result.txt
             - |
               done
 # see also: curl http://100.100.100.200/latest/user-data
-
-
+​
+​
   MyBucket:
     Type: 'ALIYUN::OSS::Bucket'
     Properties:
-      BucketName:
-        Ref: OSSBucketName
+      BucketName: {"Fn::Join": [ "-", ["imagesearchhandson", Ref: YourName]]}
       AccessControl: public-read
-
+​
   sg1:
     Type: 'ALIYUN::ECS::SecurityGroup'
     Properties:
       VpcId:
         Ref: vpc1
-      SecurityGroupName: sg-imagesearchhandson
+      SecurityGroupName: {"Fn::Join": [ "-", ["sg-imagesearchhandson", Ref: YourName]]}
       SecurityGroupIngress:
         - PortRange: 22/22
           Priority: 1
@@ -226,16 +219,19 @@ Resources:
           IpProtocol: all
           DestCidrIp: 0.0.0.0/0
           NicType: intranet
-
-
+​
+​
 Outputs:
+  env_YourName:
+    Value:
+      Ref: YourName
   env_Region:
     Value:
       Ref: Region
   env_Zone:
     Value:
       Ref: Zone
-
+​
   vpc_wp_vpc_id:
     Value:
       'Fn::GetAtt':
@@ -246,27 +242,27 @@ Outputs:
       'Fn::GetAtt':
         - vswitch1
         - VSwitchId
-  ecs_wp_instance_id:
+  ecs_instance_id:
     Value:
       'Fn::GetAtt':
         - ecs1
         - InstanceId
-  ecs_wp_HostName:
+  ecs_HostName:
     Value:
       'Fn::GetAtt':
         - ecs1
         - HostName
-  ecs_wp_PrivateIp:
+  ecs_PrivateIp:
     Value:
       'Fn::GetAtt':
         - ecs1
         - PrivateIp
-  ecs_wp_PublicIp:
+  ecs_PublicIp:
     Value:
       'Fn::GetAtt':
         - ecs1
         - PublicIp
-
+​
   OSSName:
     Value:
       'Fn::GetAtt':
