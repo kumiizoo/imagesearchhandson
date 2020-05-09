@@ -6,7 +6,8 @@ RUN apt-get update \
       jupyter-notebook python3-pip python3-setuptools
 
 # Install Python library
-RUN pip3 install aliyun-python-sdk-core-v3 \
+RUN pip3 install wheel \
+ && pip3 install aliyun-python-sdk-core-v3 \
  && pip3 install oss2 \
  && pip3 install fileupload \
  && pip3 install ipywidgets \
