@@ -30,7 +30,7 @@ PythonをGUIベースでインタラクティブに実行することができ�
 1. 次の通り入力します
     1. *テンプレートのインポート方法* : `テンプレート内容の入力`
     1. *テンプレート内容* : `YAML`
-    1. *内容欄* : `ImageSearch-handson_ROS_yaml.txtをコピーして貼ります`
+    1. *内容欄* : `ImageSearch-handson_ROS.ymlをコピーして貼ります`
 1. *次へ* ボタンを押下します
 1. 次の通り入力します
     1. *スタック名* : `stack-imagesearchhandson`
