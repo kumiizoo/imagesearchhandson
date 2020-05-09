@@ -145,6 +145,7 @@ Image Searchをすぐに試してもらうために、検索をするサンプ�
         api_result = ''
         def _on_button_clicked(change):
             global api_result
+            global original_image
 
             # str_attr
             filters = ''
@@ -162,14 +163,14 @@ Image Searchをすぐに試してもらうために、検索をするサンプ�
             print('filters: ' + filters)
 
             # region
-            cropped_region = ','.join(cropped_region_list)
+            cropped_region = ','.join(map(str,cropped_region_list))
 
             # returned items number
             returned_items_number = 20
 
             # image
             buf = BytesIO()
-            cropped_image.save(buf, format='jpeg')        
+            original_image.save(buf, format='jpeg')        
             encoded_pic_content = base64.b64encode(buf.getvalue())
 
             # sending request
