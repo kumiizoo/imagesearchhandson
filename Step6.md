@@ -189,7 +189,7 @@ Image Searchをすぐに試してもらうために、検索をするサンプ�
 
             api_result = response
             print('API Response:')
-            print(api_result)
+            print(json.dumps(json.loads(api_result), indent=4))
 
         button = widgets.Button(description="search")
         display(button)
