@@ -1,6 +1,8 @@
 # [OSS]画像登録
 ###### 10min
 
+このステップでは、Githubにある商品画像を、OSSに登録する工程を実施します。
+
 ## Notebookを起動
 1. `http://<<ECSインスタンスのIPアドレス>>:8888/tree/home/jupyter/jupyter-working` にアクセスします。
 1. 右上の *New* ボタンを押下し、*Python3* を選択します。
