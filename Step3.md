@@ -21,43 +21,59 @@ PythonをGUIベースでインタラクティブに実行することができ�
 #### RAM
 [Step2](Step2.md)を参照してください。
 
-## インフラ構築
+## ROSでインフラ構築
+
+ここでは、ROSを使用して、VPC,ECS、OSSを構築し、ECS内にDockerでJupyter Notebookを構築し、初期設定するところまで行います。
+
 1. *仮想サーバーサービス* メニューの *Resource Orchestration Service* を選択します
 1. 左上のリージョンから指定されたリージョンを選択します
 1. 左のメニューから *スタック* を選択します
 1. *スタック の作成* ボタンを押下します
 1. *既存のテンプレートを選択してください* ボタンを押下します
+1. [ImageSearch-handson_ROS.yml](https://raw.githubusercontent.com/kanzai935/imagesearchhandson/master/ImageSearch-handson_ROS.yml) を右クリックしてリンク先を保存
 1. 次の通り入力します
-    1. *テンプレートのインポート方法* : `テンプレート内容の入力`
+    1. *テンプレートのインポート方法* : `テンプレートのアップロード`
+    1. *ファイルのアップロード* を選択して、先ほどダウンロードした　`ImageSearch-handson_ROS.yml` を選択します
     1. *テンプレート内容* : `YAML`
-    1. *内容欄* : `ImageSearch-handson_ROS.ymlをコピーして貼ります`
+    1. *内容欄* : 内容が表示されるのを確認
 1. *次へ* ボタンを押下します
 1. 次の通り入力します
-    1. *スタック名* : `stack-imagesearchhandson`
-    1. *RamAdminUserPassword* : `任意の文字列`
-    1. *Region* : `指定されたリージョン`
-    1. *Zone* : `指定されたリージョンのゾーン`
-    1. *ImageSearchInstanceName* : `imagesearchhandson`
+    1. *スタック名* : `stack-imagesearchhandson-(YourName)`
+    1. *YourName* : "英数字で自分の名前" （リソース名が重複しないようにするため）
+    1. *Region* : `指定されたリージョン`   (自分が割り当てされたリージョン)
+    1. *Zone* : `指定されたリージョンのゾーン`  (自分が割り当てされたリージョンのゾーン)
+    1. *ImageSearchInstanceName* : `imagesearchhandson`　(先ほど作成したインスタンス名)
     1. *ECS Instance Type* : `ecs.t5-lc1m1.small`
-    1. *RootPassword* : `任意の文字列`
-    1. *OSSBucketName* : `imagesearchhandson-<<氏名>>`
+    1. *ECS Root Password* : `任意の文字列`
 1. *スタックの作成* ボタンを押下します
 1. 次の通り入力します
 1. `stack-imagesearchhandson` のステータスが *成功* になっていることを確認します
 1. `stack-imagesearchhandson` を押下します
-1. *outputs* タブを選択し、ECSインスタンスのIPアドレスをメモします
-1. 画面右上の 公式サイト の右隣にある *Cloud Shell* アイコンボタンを押下します
+1. *出力* タブを選択し、ECSインスタンスのIPアドレスをメモします
+
+## Jupyter NotebookのTokenを確認
+
+ECSにログインし、Jupyter NotebookにログインするためのTokenを取得します。
+
+1. 画面右上の 公式サイト の右隣にある *Cloud Shell* アイコンボタン(四角いアイコン)を押下します
 1. ストレージスペース に関するモーダルの *スキップ* を選択
 1. 次を入力し、ECSインスタンスにログインします
     ```
     ssh root@<<ECSインスタンスのIPアドレス>>
     Are you sure you want to continue connecting (yes/no)? >> yes
-    root@<<ECSインスタンスのIPアドレス>>'s password: >> <<RootPasswordに設定した文字列>>
+    root@<<ECSインスタンスのIPアドレス>>'s password: >> <<ECS Root Passwordに設定した文字列>>
     ```
-1. 次を入力し、Jupyter Notebookのtokenをメモします
+1. 次を入力し、Jupyter Notebookのtokenをメモします。(URLの?から後ろ)
     ```
-    less /root/userdata-result.txt
+    tail -10 /root/userdata-result.txt
     ```
+    ```
+    出力例：
+    ## Jupyter Notebook Token: 
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://0.0.0.0:8888/?token=1d03c73c62d13d25f844bcczzzzzzzzzzzzzzzzzzzzzzzzzzz
+   ```
 1. 次を入力し、Cloud Shellからログアウトします
     ```
     exit
