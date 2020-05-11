@@ -69,21 +69,19 @@ Resources:
           PolicyDocument:
             Version: '1'
             Statement:
-              - Action: 'imagesearch:*'
-                Resource: '*'
+              - Action: ['imagesearch:*']
+                Resource: ['*']
                 Effect: Allow
           Description: note
         - PolicyName: AliyunOSSFullAccess_custum
           PolicyDocument:
             Version: '1'
             Statement:
-              - Action:
-                  - 'oss:*'
+              - Action: ['oss:*']
+                Resource: ['*']
                 Effect: Allow
-                Resource:
-                  - '*'
           Description: custom
-
+  
   RamImageSearchHandsOnUserAK:
     Type: 'ALIYUN::RAM::AccessKey'
     Properties:
