@@ -51,6 +51,14 @@ PythonをGUIベースでインタラクティブに実行することができ�
 1. `stack-imagesearchhandson` を押下します
 1. *出力* タブを選択し、ECSインスタンスのIPアドレスをメモします
 
+## （任意） ROSで自動作成されたRAMユーザを確認
+
+1. *マネジメント* メニューの *Resource Access Management* (RAM) を選択します
+1. 左のメニューから *ユーザー* を選択します
+1. *ImageSearchHandsOnUser-(YourName)@524330000000000.onaliyun.com* を選択します
+1. AccesssKeyが作成されていることを確認。AccessKeySecretは作成時しか分かりません。ECSサーバにあるenvファイルに保存されています。
+1. 権限管理で、ポリシーが割り当てされていることを確認する。（自分で作る場合は、 `AliyunImageSearchFullAccess` と、 `AliyunOSSFullAccess`  を権限に追加してください。）
+
 ## Jupyter NotebookのTokenを確認
 
 ECSにログインし、Jupyter NotebookにログインするためのTokenを取得します。
@@ -63,7 +71,7 @@ ECSにログインし、Jupyter NotebookにログインするためのTokenを�
     Are you sure you want to continue connecting (yes/no)? >> yes
     root@<<ECSインスタンスのIPアドレス>>'s password: >> <<ECS Root Passwordに設定した文字列>>
     ```
-1. 次を入力し、Jupyter Notebookのtokenをメモします。(URLの?から後ろ)
+1. 次を入力し、Jupyter Notebookのtokenをメモします。(URLの?token=の後ろ)
     ```
     tail -10 /root/userdata-result.txt
     ```
@@ -78,6 +86,9 @@ ECSにログインし、Jupyter NotebookにログインするためのTokenを�
     ```
     exit
     ```
+
+## Jupyter Notebookにログイン
+
 1. ブラウザから `http://<<ECSインスタンスのIPアドレス>>:8888` にアクセスし、メモした token を記入して、Jupyter Notebookにログインします
 1. `home/jupyter/jupter-working` ディレクトリに移動します
 
