@@ -2,7 +2,7 @@
 ![Image search icon](img/imagesearch.png)
 
 ## Image Searchの説明
-- [資料はこちら]()
+- [資料はこちら](https://www.alibabacloud.com/help/ja/doc-detail/66657.htm)
 
 ## ハンズオンタイムテーブル
 | Timeline | Title |
@@ -21,7 +21,7 @@
 | 4 | [[OSS]画像登録](Step4.md) | アプリ |
 | 5 | [[Image Search]画像登録](Step5.md) | アプリ |
 | 6 | [[Image Search]画像検索](Step6.md) | アプリ |
-| 7 | [後片付け](Step11.md) | -      |
+| 7 | [後片付け](Step7.md) | -      |
 
 ## 参考
 - [Alibaba Cloudアカウント登録マニュアル](https://www.sbcloud.co.jp/document/account_registration)
