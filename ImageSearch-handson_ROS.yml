@@ -5,7 +5,8 @@ Parameters:
   YourName:
     Type: String
     AllowedPattern: '[a-zA-Z0-9]*'
-    Description: YourName(Alphabet/Number Only, No Space)
+    MaxLength: 6
+    Description: YourName(Alphabet/Number Only, No Space, Maxlength 6 chars)
     Label: Your Name
 
   Region:
@@ -63,7 +64,8 @@ Resources:
   RamImageSearchHandsOnUser:
     Type: 'ALIYUN::RAM::User'
     Properties:
-      UserName: {"Fn::Join": [ "-", ["ImageSearchHandsOnUser", Ref: YourName]]}
+      UserName:    {"Fn::Join": [ "-", ["ImageSearchHandsOnUser", Ref: YourName]]}
+      DisplayName: {"Fn::Join": [ "",  ["ISUser", Ref: YourName]]}
       Policies:
         - PolicyName: AliyunImageSearchFullAccess_custom
           PolicyDocument:
