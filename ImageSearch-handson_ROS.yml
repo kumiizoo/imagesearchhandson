@@ -198,7 +198,7 @@ Resources:
             - |
               sleep 10
             - |
-            　docker logs `docker ps | grep notebook | awk '{print $1}'` 2>&1 | grep "  http://0.0.0.0" -B 2
+              docker logs `docker ps | grep notebook | awk '{print $1}'` 2>&1 | grep "  http://0.0.0.0" -B 2
             - |
 
               ) 2>&1 | tee -a /root/userdata-result.txt
