@@ -188,13 +188,17 @@ Resources:
 
               EOF
             - |
+              echo "## Jupyter Notebook build: ";
+            - |
               docker image build -t notebook .;
             - |
-              echo "## Jupyter Notebook Token: ";
+              echo "## Jupyter Notebook run: ";
             - |
               docker run --rm -v /root/imagesearchhandson:/home/jupyter/jupyter-working --env-file=env -d -p 8888:8888 -u root notebook;
             - |
               sleep 10
+            - |
+              echo "## Jupyter Notebook Token: ";
             - |
               docker logs `docker ps | grep notebook | awk '{print $1}'` 2>&1 | grep "  http://0.0.0.0" -B 2
             - |
