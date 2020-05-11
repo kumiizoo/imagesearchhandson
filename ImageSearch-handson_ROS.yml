@@ -32,7 +32,7 @@ Parameters:
       # オーストラリア（シドニー）    緑色
       - ap-southeast-2a
       # 日本（東京）青色
-      - ap-northeast-1a​
+      - ap-northeast-1a
 
   ImageSearchInstanceName:
     Type: String
@@ -88,7 +88,7 @@ Resources:
       UserName:
         'Fn::GetAtt':
           - RamImageSearchHandsOnUser
-          - UserName​
+          - UserName
 
   vpc1:
     Type: 'ALIYUN::ECS::VPC'
