@@ -1,13 +1,13 @@
 ROSTemplateFormatVersion: '2015-09-01'
 Description: 'Create VPC ECS instance for Cloud Computing Handson for Tokyo。Image Searchのインスタンスは事前に作る。RAMユーザの作成。実行が終わったら、ISAdminUserにスイッチ。ECSにログインしてTokenを確認してください。'
 Parameters:
-​
+
   YourName:
     Type: String
     AllowedPattern: '[a-zA-Z0-9]*'
     Description: YourName(Alphabet/Number Only, No Space)
     Label: Your Name
-​
+
   Region:
     Type: String
     Description: 使用するリージョンを選択してください。上から、香港、シンガポール、シドニー、東京です。
@@ -20,7 +20,7 @@ Parameters:
       - ap-southeast-2
       # 日本（東京）青色
       - ap-northeast-1
-​
+
   Zone:
     Type: String
     Description: 使用するリージョンのゾーンを選択してください。上から、香港、シンガポール、シドニー、東京です。
@@ -32,13 +32,13 @@ Parameters:
       # オーストラリア（シドニー）    緑色
       - ap-southeast-2a
       # 日本（東京）青色
-      - ap-northeast-1a
-​
+      - ap-northeast-1a​
+
   ImageSearchInstanceName:
     Type: String
     AllowedPattern: '[a-zA-Z0-9]*'
     Description: 作成済みインスタンス名を入力してください
-​
+
   InstanceType:
     Type: String
     Description: ECS Instance Type
@@ -50,37 +50,54 @@ Parameters:
       - ecs.c5.xlarge
     Label: ECS Instance Type
     Default: ecs.t5-lc1m1.small
-​
-​
+
   RootPassword:
     Type: String
     NoEcho: true
     Description: ECS root Password
     Label: ECS root Password
-​
+
+
 Resources:
-​
+
   RamImageSearchHandsOnUser:
     Type: 'ALIYUN::RAM::User'
     Properties:
       UserName: {"Fn::Join": [ "-", ["ImageSearchHandsOnUser", Ref: YourName]]}
-​
-​
+      Policies:
+        - PolicyName: AliyunImageSearchFullAccess_custom
+          PolicyDocument:
+            Version: '1'
+            Statement:
+              - Action: 'imagesearch:*'
+                Resource: '*'
+                Effect: Allow
+          Description: note
+        - PolicyName: AliyunOSSFullAccess_custum
+          PolicyDocument:
+            Version: '1'
+            Statement:
+              - Action:
+                  - 'oss:*'
+                Effect: Allow
+                Resource:
+                  - '*'
+          Description: custom
+
   RamImageSearchHandsOnUserAK:
     Type: 'ALIYUN::RAM::AccessKey'
     Properties:
-      UserName: 
+      UserName:
         'Fn::GetAtt':
           - RamImageSearchHandsOnUser
-          - UserName
-​
-​
+          - UserName​
+
   vpc1:
     Type: 'ALIYUN::ECS::VPC'
     Properties:
       CidrBlock: 10.0.0.0/8
       VpcName: {"Fn::Join": [ "-", ["vpc-imagesearchhandson", Ref: YourName]]}
-​
+
   vswitch1:
     Type: 'ALIYUN::ECS::VSwitch'
     Properties:
@@ -89,8 +106,7 @@ Resources:
       VSwitchName: {"Fn::Join": [ "-", ["vswitch-imagesearchhandson", Ref: YourName]]}
       ZoneId: ap-northeast-1a
       CidrBlock: 10.0.0.0/24
-​
-​
+
   ecs1:
     Type: 'ALIYUN::ECS::Instance'
     Properties:
@@ -116,7 +132,7 @@ Resources:
         Ref: sg1
       Password:
         Ref: RootPassword
-​
+
       UserData:
         'Fn::Join':
           - ''
@@ -151,28 +167,27 @@ Resources:
               - 'RamImageSearchHandsOnUserAK'
               - 'AccessKeyId'
             - |+
-​
+
             - ACCESS_KEY_SECRET=
             - 'Fn::GetAtt':
               - 'RamImageSearchHandsOnUserAK'
               - 'AccessKeySecret'
             - |+
-​
+
             - REGION=
             - Ref: Region
             - |+
-​
+
             - BUCKET_NAME=
             - 'Fn::GetAtt':
               - MyBucket
               - Name
             - |+
-​
-​
+
             - IMAGESEARCH_INSTANCE_NAME=
             - Ref: ImageSearchInstanceName
             - |+
-​
+
               EOF
             - |
               docker image build -t notebook .;
@@ -185,19 +200,18 @@ Resources:
             - |
             　docker logs `docker ps | grep notebook | awk '{print $1}'` 2>&1 | grep "  http://0.0.0.0" -B 2
             - |
-              
+
               ) 2>&1 | tee -a /root/userdata-result.txt
             - |
               done
 # see also: curl http://100.100.100.200/latest/user-data
-​
-​
+
   MyBucket:
     Type: 'ALIYUN::OSS::Bucket'
     Properties:
       BucketName: {"Fn::Join": [ "-", ["imagesearchhandson", Ref: YourName]]}
       AccessControl: public-read
-​
+
   sg1:
     Type: 'ALIYUN::ECS::SecurityGroup'
     Properties:
@@ -221,8 +235,8 @@ Resources:
           IpProtocol: all
           DestCidrIp: 0.0.0.0/0
           NicType: intranet
-​
-​
+
+
 Outputs:
   env_YourName:
     Value:
@@ -233,7 +247,7 @@ Outputs:
   env_Zone:
     Value:
       Ref: Zone
-​
+
   vpc_wp_vpc_id:
     Value:
       'Fn::GetAtt':
@@ -264,7 +278,7 @@ Outputs:
       'Fn::GetAtt':
         - ecs1
         - PublicIp
-​
+
   OSSName:
     Value:
       'Fn::GetAtt':
