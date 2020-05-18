@@ -3,6 +3,7 @@
 
 ## Image Search
 無料で購入したImage Searchは削除できないため、後片付けは不要です。1ヶ月後に自動で削除されます。
+Image Searchに登録された画像を削除したい場合は[こちら](https://github.com/kanzai935/imagesearchhandson/blob/backup/Step10.md)を参照してください。
 
 ## OSS
 ##### オブジェクトの削除
@@ -34,4 +35,3 @@
 
 
 [戻る](Step6.md) | [目次へ](README.md)
-    
