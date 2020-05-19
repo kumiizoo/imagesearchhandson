@@ -67,7 +67,7 @@ Resources:
       UserName:    {"Fn::Join": [ "-", ["ImageSearchHandsOnUser", Ref: YourName]]}
       DisplayName: {"Fn::Join": [ "",  ["ISUser", Ref: YourName]]}
       Policies:
-        - PolicyName: AliyunImageSearchFullAccess_custom
+        - PolicyName: {"Fn::Join": [ "", ["AliyunImageSearchFullAccess_custom", Ref: YourName]]}
           PolicyDocument:
             Version: '1'
             Statement:
@@ -75,7 +75,7 @@ Resources:
                 Resource: ['*']
                 Effect: Allow
           Description: note
-        - PolicyName: AliyunOSSFullAccess_custum
+        - PolicyName: {"Fn::Join": [ "", ["AliyunOSSFullAccess_custum", Ref: YourName]]}
           PolicyDocument:
             Version: '1'
             Statement:
@@ -104,7 +104,8 @@ Resources:
       VpcId:
         Ref: vpc1
       VSwitchName: {"Fn::Join": [ "-", ["vswitch-imagesearchhandson", Ref: YourName]]}
-      ZoneId: ap-northeast-1a
+      ZoneId: 
+        Ref: Zone
       CidrBlock: 10.0.0.0/24
 
   ecs1:
